@@ -9,7 +9,6 @@ import {
     Grid,
     Box,
 } from "@mui/material";
-import { styled } from '@mui/system';
 
 
 import { HeroSection } from "./components/HeroSection";
@@ -18,7 +17,6 @@ import { ConceptSection } from "./components/ConceptSection";
 import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
 import { ThemeProvider, createTheme } from "@mui/material";
-import {ChatFrame, ProfileFrame, ThreadFrame} from "./components/AppUIFrame";
 import {UIDetailsSection} from "./components/UIDetailsSection";
 
 const MaterialUISample = () => {
@@ -80,25 +78,6 @@ const MaterialUISample = () => {
     );
 };
 
-const UISection = () => {
-    return (
-        <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            height="50vh"
-        >
-            <Typography variant="h3" gutterBottom>
-                UI
-            </Typography>
-            <Typography variant="h5" gutterBottom>
-                なんかかく
-            </Typography>
-        </Box>
-    );
-};
-
 const theme = createTheme({
     typography: {
         fontFamily: "monospace, Source Code Pro",
@@ -123,8 +102,7 @@ const AppRoute = () => {
                     <FeatureSection />
                 </Box>
 
-                <Box mb={3} bgcolor={backgroundColor} p={5}>
-                    <UISection />
+                <Box mb={3} bgcolor={backgroundColor} p={2}>
                     <UIDetailsSection />
                 </Box>
 

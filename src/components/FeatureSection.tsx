@@ -9,7 +9,7 @@ import {
     TimetableIcon,
     ToDoListIcon,
 } from "./Icons";
-import {ChatFrame, MainFrame, ProfileFrame, ThreadFrame} from "./AppUIFrame";
+import {ChatFrame, CalenderFrame, ProfileFrame, ThreadFrame} from "./AppUIFrame";
 import { mainColor, strongMainColor } from "./Utils";
 
 // todo: 流石に汚くなってきたからなんとかしたい
@@ -54,7 +54,7 @@ const features = [
                 ),
             },
         ],
-        image: <MainFrame scale={0.7} />,
+        image: <CalenderFrame scale={0.7} />,
     },
     {
         overview: "情報交換の新しい形",

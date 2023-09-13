@@ -1,24 +1,24 @@
 import IPhoneFrame from "../assets/iphone-frame.png";
-import MainFrameCore from "../assets/MainFrameCore.svg";
-import ThreadFrameCore from "../assets/ThreadFrameCore.svg";
-import ChatFrameCore from "../assets/ChatFrameCore.svg";
 import ProfileFrameCore from "../assets/ProfileFrameCore.svg";
+import CalenderFrameCore from "../assets/CalenderFrameCore.svg";
+import ToDoFrameCore from "../assets/ToDoFrameCore.svg";
+import AddToDoFrameCore from "../assets/AddToDoFrameCore.svg";
+import CourseFrameCore from "../assets/CourseFrameCore.svg";
+import ThreadFrameCore from "../assets/ThreadFrameCore.svg";
+import CreateThreadFrameCore from "../assets/CreateThreadFrameCore.svg";
+import ChatFrameCore from "../assets/ChatFrameCore.svg";
 
 import { Box } from "@mui/material";
+import React from "react";
 
 type FrameProps = {
-    scale: number;
+    scale?: number;
+    shadow?: boolean;
 };
-type FrameHelperProps = {
-    scale: number;
-    FrameCore: () => undefined
-    shadow: boolean
-};
-// todo: scaling
-const FrameHelper = ({ scale, FrameCore, shadow }: FrameHelperProps) => {
-    const transformStr = `scale(${scale})`;
-    return (
-        <Box position="relative" sx={{ transform: transformStr }} display="flex" justifyContent="center" alignItems="center">
+
+const FrameGenerator = (FrameCore: () => undefined): React.FC<FrameProps> => {
+    return ({scale = 1.0, shadow = true}) => (
+        <Box position="relative" sx={{ transform: `scale(${scale})` }} display="flex" justifyContent="center" alignItems="center">
             <Box
                 sx={{
                     position: "absolute",
@@ -55,18 +55,13 @@ const FrameHelper = ({ scale, FrameCore, shadow }: FrameHelperProps) => {
     );
 };
 
-export const MainFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={MainFrameCore} shadow={shadow} />;
-};
-
-export const ThreadFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={ThreadFrameCore} shadow={shadow} />;
-};
-
-export const ChatFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={ChatFrameCore} shadow={shadow} />;
-};
-
-export const ProfileFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={ProfileFrameCore} shadow={shadow} />;
-}
+export const [ProfileFrame, CalenderFrame, ToDoFrame, AddToDoFrame, CourseFrame, ThreadFrame, CreateThreadFrame, ChatFrame] = [
+    ProfileFrameCore,
+    CalenderFrameCore,
+    ToDoFrameCore,
+    AddToDoFrameCore,
+    CourseFrameCore,
+    ThreadFrameCore,
+    CreateThreadFrameCore,
+    ChatFrameCore,
+].map(FrameGenerator);
