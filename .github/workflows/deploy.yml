@@ -43,7 +43,7 @@ jobs:
                   path: ./docs
 
             - name: Add .nojekyll file
-              run: touch .nojekyll dist/.nojekyll
+              run: touch .nojekyll docs/.nojekyll
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
