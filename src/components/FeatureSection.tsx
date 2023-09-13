@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography, styled } from "@mui/material";
 import ShareCalenderIcon from "../assets/link_calendar.png";
 import ReactionIcon from "../assets/reaction.png";
 import ChatIcon from "../assets/chat.png";
@@ -10,6 +10,8 @@ import {
     ToDoListIcon,
 } from "./Icons";
 import { ChatFrame, MainFrame, ThreadFrame } from "./AppUIFrame";
+import {mainColor, strongMainColor} from "./Utils";
+
 
 const cardSize = {
     width: { xs: 340, md: 450, lg: 500 },
@@ -46,7 +48,6 @@ const data = [
                     <Box
                         component="img"
                         src={ShareCalenderIcon}
-                        alt="app store logo"
                         sx={{ height: "5em" }}
                     />
                 ),
@@ -63,7 +64,6 @@ const data = [
                     <Box
                         component="img"
                         src={ChatIcon}
-                        alt="app store logo"
                         sx={{ height: "5em" }}
                     />
                 ),
@@ -74,7 +74,6 @@ const data = [
                     <Box
                         component="img"
                         src={ReactionIcon}
-                        alt="app store logo"
                         sx={{ height: "6.5em" }}
                     />
                 ),
@@ -95,7 +94,6 @@ const data = [
                     <Box
                         component="img"
                         src={FriendIcon}
-                        alt="app store logo"
                         sx={{ height: "4em" }}
                     />
                 ),
@@ -139,7 +137,7 @@ const FeatureCard = ({ overview, content }) => {
                         width="120%"
                         left="-10%"
                         height="4px"
-                        bgcolor="#FFB84E"
+                        bgcolor={mainColor}
                         mx="auto"
                         mt={1}
                     />
@@ -187,9 +185,33 @@ const FeatureImage = ({ image }) => {
     );
 };
 
+const HighlightedText = styled('span')({
+    color: strongMainColor,
+    // marginLeft: '100px', // 例として、左に4ピクセルのマージンを追加
+    // textDecoration: 'underline',
+});
 export const FeatureSection = () => {
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
+            <Box display="inline-block" position="relative" mb={2}>
+                <Typography variant="h4" fontWeight="bold" mt={3} mb={3}>
+                    そんな孤独で不安な大学生を助けるのが
+                        <Box display="inline-block" position="relative" mb={2}>
+                            <HighlightedText>Link C</HighlightedText>
+                            {/*<Box*/}
+                            {/*    position="absolute"*/}
+                            {/*    width="110%"*/}
+                            {/*    left="-5%"*/}
+                            {/*    height="4px"*/}
+                            {/*    bgcolor="#333"*/}
+                            {/*    mx="auto"*/}
+                            {/*    mt={1}*/}
+                            {/*/>*/}
+                        </Box>
+                </Typography>
+            </Box>
+
+
             {data.map((item, index) => (
                 <Grid
                     container

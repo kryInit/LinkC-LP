@@ -1,11 +1,17 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
+import TroubleStudentIcon from "../assets/trouble_student.png";
+import {mainColor} from "./Utils";
+
 
 export const ConceptSection = () => {
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
             <Box display="inline-block" position="relative" mb={2}>
-                <Typography variant="h4" component="h1" fontWeight="bold">
-                    学びとつながりの新しいスタイル
+                <Typography variant="h5" mb={1} color={"#EF8640"}>
+                    大学生の皆さん
+                </Typography>
+                <Typography variant="h4" fontWeight="bold">
+                    こんなお悩みはありませんか？
                 </Typography>
                 <Box
                     position="absolute"
@@ -16,9 +22,34 @@ export const ConceptSection = () => {
                     bgcolor="#333"
                 />
             </Box>
-            <Typography variant="body1" textAlign="center">
-                あなたの時間割から、仲間との最適な時間を発見。学業も交流も手放さない
-            </Typography>
+            <Grid container spacing={2}
+                  sx={{
+                      // display: "flex",
+                      // justifyContent: "center",
+                      width: "70%",
+                      alignItems: "center",
+                  }}
+            >
+
+                <Grid item xs={12} md={6}>
+                    <Typography variant="h5" textAlign="center" mb={6}>
+                        友達がいないし、作るきっかけもない
+                    </Typography>
+                    <Typography variant="h5" textAlign="center">
+                        誰にも聞けないから授業情報がわからない
+                    </Typography>
+                </Grid>
+
+                {/* 画像1 */}
+                <Grid item xs={12} md={6} sx={{ display: "flex", justifyContent: "center" }}>
+                    <Box
+                        component="img"
+                        src={TroubleStudentIcon}
+                        sx={{ height: 300 }}
+                    />
+                </Grid>
+
+            </Grid>
         </Box>
     );
 };
