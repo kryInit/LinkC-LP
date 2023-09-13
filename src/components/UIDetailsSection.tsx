@@ -56,7 +56,13 @@ const DetailedFrame = ({
 export const UIDetailsSection = () => {
     return (
         <>
-            <Typography variant="h4" fontWeight="bold" mt={3} mb={3}>
+            <Typography
+                variant="h4"
+                fontWeight="bold"
+                mt={3}
+                mb={3}
+                align="center"
+            >
                 <span style={{ color: strongMainColor }}>Link C </span>
                 を使ってみましょう！
             </Typography>

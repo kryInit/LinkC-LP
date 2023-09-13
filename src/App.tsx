@@ -8,6 +8,7 @@ import {
     Button,
     Grid,
     Box,
+    IconButton,
 } from "@mui/material";
 
 import { HeroSection } from "./components/HeroSection";
@@ -17,6 +18,7 @@ import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { UIDetailsSection } from "./components/UIDetailsSection";
+import { mainColor, strongMainColor } from "./components/Utils";
 
 const MaterialUISample = () => {
     return (
@@ -82,11 +84,38 @@ const theme = createTheme({
         fontFamily: "monospace, Source Code Pro",
     },
 });
+import React from "react";
+import { Menu } from "@mui/icons-material";
+
+const appBarTheme = createTheme({
+    palette: {
+        primary: { main: "#333" },
+        secondary: { main: "#ff5722" },
+    },
+});
 
 const backgroundColor = "#FEF7EB";
 const AppRoute = () => {
     return (
         <>
+            {/*<ThemeProvider theme={appBarTheme}>*/}
+            {/*    <AppBar position="static" elevation={0}>*/}
+            {/*        <Toolbar>*/}
+            {/*            /!*<IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>*!/*/}
+            {/*                /!*<Menu />*!/*/}
+            {/*            /!*</IconButton>*!/*/}
+            {/*            <Typography variant="h6" flexGrow={1}>*/}
+            {/*                Link C*/}
+            {/*            </Typography>*/}
+            {/*            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>*/}
+            {/*                <Button color="inherit">About</Button>*/}
+            {/*                <Button color="inherit">Services</Button>*/}
+            {/*                <Button color="inherit">Contact</Button>*/}
+            {/*            </Box>*/}
+            {/*        </Toolbar>*/}
+            {/*    </AppBar>*/}
+            {/*</ThemeProvider>*/}
+
             <Box mb={3} p={0}>
                 <HeroSection />
             </Box>
