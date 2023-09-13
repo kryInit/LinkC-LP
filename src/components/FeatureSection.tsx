@@ -258,7 +258,7 @@ export const FeatureSection = () => {
         <Box display="flex" flexDirection="column" alignItems="center">
             <Box display="inline-block" position="relative" mb={2}>
                 <Typography variant="h4" fontWeight="bold" mt={3} mb={3}>
-                    そんな孤独で不安な大学生を助けるのが
+                    そんな孤独で不安な大学生を助けるのが{" "}
                     <Box display="inline-block" position="relative" mb={2}>
                         <span style={{ color: strongMainColor }}>Link C</span>
                         {/*<Box*/}

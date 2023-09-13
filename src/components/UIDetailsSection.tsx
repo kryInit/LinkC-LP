@@ -67,7 +67,10 @@ export const UIDetailsSection = () => {
                 を使ってみましょう！
             </Typography>
 
-            <Box display="flex" justifyContent="center" mb={10}>
+            <Box display="flex" justifyContent="center"
+                 sx={{ borderBottom: `3px solid ${strongMainColor}` }}
+                 mb={10}
+            >
                 <Box
                     sx={{
                         display: "flex",
@@ -78,7 +81,7 @@ export const UIDetailsSection = () => {
                 >
                     <DetailedFrame
                         Frame={() => <CalenderFrame scale={0.7} />}
-                        expl={"プロフィールを設定"}
+                        expl={"カレンダーで予定を表示"}
                     />
                     <DetailedFrame
                         Frame={() => (
@@ -99,11 +102,17 @@ export const UIDetailsSection = () => {
                                 </Box>
                             </Box>
                         )}
-                        expl={"画面"}
+                        expl={"ToDo形式でも"}
                     />
                 </Box>
             </Box>
-            <Box display="flex" justifyContent="center">
+            <Box display="flex" justifyContent="center"
+                 sx={{
+                     borderTop: `3px solid ${strongMainColor}`,
+                     borderBottom: `3px solid ${strongMainColor}`
+                 }}
+                 mb={3}
+            >
                 <Box
                     sx={{
                         display: "flex",
@@ -111,6 +120,7 @@ export const UIDetailsSection = () => {
                         overflowY: "hidden",
                         whiteSpace: "nowrap",
                     }}
+
                 >
                     <DetailedFrame
                         Frame={() => <ProfileFrame scale={0.7} />}
@@ -142,7 +152,7 @@ export const UIDetailsSection = () => {
                                 </Box>
                             </Box>
                         )}
-                        expl={"画面"}
+                        expl={"チャットルームの作成"}
                     />
                     <DetailedFrame
                         Frame={

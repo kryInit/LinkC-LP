@@ -142,19 +142,6 @@ const AppRoute = () => {
                 </Box>
             </Container>
 
-            {/*<Box sx={{                          overflow: 'hidden',*/}
-            {/*    clipPath: 'polygon(0 0, 100% 0, 100% 75%, 0 100%)'}}>*/}
-            {/*    <ThreadFrame scale={0.7} />,*/}
-            {/*</Box>*/}
-            {/*<Box sx={{            clipPath: 'polygon(0 0, 100% 0, 0 100%)', // 下部を斜めにカット*/}
-            {/*}}>*/}
-            {/*    <ThreadFrame scale={0.7}/>*/}
-            {/*</Box>*/}
-
-            {/*<Box height="50%" overflow="hidden">*/}
-            {/*    <ChatFrame scale={1.0} />*/}
-            {/*</Box>*/}
-
             <Typography
                 align="center"
                 color="textSecondary"

@@ -50,7 +50,7 @@ export const BottomCTASection = () => {
         <Box display="flex" flexDirection="column" alignItems="center">
             <Typography variant="h4" fontWeight="bold" mb={4}>
                 <span style={{ color: strongMainColor }}>Link C</span>
-                を始めよう！
+                {" "}を始めよう！
             </Typography>
             <Box
                 component="img"
