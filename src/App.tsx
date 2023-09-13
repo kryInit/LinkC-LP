@@ -10,14 +10,13 @@ import {
     Box,
 } from "@mui/material";
 
-
 import { HeroSection } from "./components/HeroSection";
 import { BottomCTASection } from "./components/CTASection";
 import { ConceptSection } from "./components/ConceptSection";
 import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
 import { ThemeProvider, createTheme } from "@mui/material";
-import {UIDetailsSection} from "./components/UIDetailsSection";
+import { UIDetailsSection } from "./components/UIDetailsSection";
 
 const MaterialUISample = () => {
     return (
@@ -88,7 +87,6 @@ const backgroundColor = "#FEF7EB";
 const AppRoute = () => {
     return (
         <>
-
             <Box mb={3} p={0}>
                 <HeroSection />
             </Box>
@@ -128,14 +126,13 @@ const AppRoute = () => {
             {/*    <ChatFrame scale={1.0} />*/}
             {/*</Box>*/}
 
-
-
             <Typography
                 align="center"
                 color="textSecondary"
                 style={{ opacity: 0.6, fontSize: "0.8rem" }}
             >
-                このサイトは愛とクッキーでできているから、分けてあげられないんだ... ごめんね！  🍪 2023
+                このサイトは愛とクッキーでできているから、分けてあげられないんだ...
+                ごめんね！ 🍪 2023
             </Typography>
 
             {/*<div style={{ height: "50vh" }} />*/}

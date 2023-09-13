@@ -9,7 +9,12 @@ import {
     TimetableIcon,
     ToDoListIcon,
 } from "./Icons";
-import {ChatFrame, CalenderFrame, ProfileFrame, ThreadFrame} from "./AppUIFrame";
+import {
+    ChatFrame,
+    CalenderFrame,
+    ProfileFrame,
+    ThreadFrame,
+} from "./AppUIFrame";
 import { mainColor, strongMainColor } from "./Utils";
 
 // todo: 流石に汚くなってきたからなんとかしたい
@@ -81,13 +86,15 @@ const features = [
             },
         ],
         image: (
-            <Box sx={{
-                justifyContent:" center",
-                position: "relative",
-                display: "flex",
-                width: "100%",
-                height: "140%",
-            }}>
+            <Box
+                sx={{
+                    justifyContent: " center",
+                    position: "relative",
+                    display: "flex",
+                    width: "100%",
+                    height: "140%",
+                }}
+            >
                 {/*<Box*/}
                 {/*    sx={{*/}
                 {/*        position: "absolute",*/}
@@ -115,28 +122,32 @@ const features = [
                 {/*    width={372}*/}
                 {/*/>*/}
 
-
-                <Box sx={{
-                    position: "absolute",
-                    // marginTop: "-9%",
-                    clipPath: 'polygon(0% 0%, 0% 51%, 100% 31%, 100% 0%)',
-                    justifyContent: "center",
-                    alignItems: "center",
-                    display: "flex",
-                }}>
+                <Box
+                    sx={{
+                        position: "absolute",
+                        // marginTop: "-9%",
+                        clipPath: "polygon(0% 0%, 0% 51%, 100% 31%, 100% 0%)",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        display: "flex",
+                    }}
+                >
                     <ThreadFrame scale={0.7} shadow={true} />
                 </Box>
-                <Box sx={{
-                    position: "absolute",
-                    clipPath: 'polygon(0% 100%, 0% 53%, 100% 33%, 100% 100%)',
-                    justifyContent: "center",
-                    alignItems: "center",
-                    display: "flex",
-                }}>
+                <Box
+                    sx={{
+                        position: "absolute",
+                        clipPath:
+                            "polygon(0% 100%, 0% 53%, 100% 33%, 100% 100%)",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        display: "flex",
+                    }}
+                >
                     <ChatFrame scale={0.7} shadow={true} />
                 </Box>
             </Box>
-        )
+        ),
     },
     {
         overview: "交友の機会が広がる",

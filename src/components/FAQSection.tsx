@@ -26,10 +26,7 @@ const faqData = [
 
 export const FAQSection = () => {
     return (
-        <Box
-            display="flex"
-            justifyContent="center"
-        >
+        <Box display="flex" justifyContent="center">
             <Box
                 bgcolor={FAQBackgroundColor}
                 p={4}
