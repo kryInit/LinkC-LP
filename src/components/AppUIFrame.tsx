@@ -15,8 +15,9 @@ type FrameHelperProps = {
 };
 // todo: scaling
 const FrameHelper = ({ scale, FrameCore }: FrameHelperProps) => {
+    const transformStr = `scale(${scale})`;
     return (
-        <Box position="relative" sx={{ transform: "scale(0.7)" }} display="flex" justifyContent="center" alignItems="center">
+        <Box position="relative" sx={{ transform: transformStr }} display="flex" justifyContent="center" alignItems="center">
             <Box
                 sx={{
                     position: "absolute",

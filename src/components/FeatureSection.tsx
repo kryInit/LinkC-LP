@@ -52,7 +52,7 @@ const features = [
                 ),
             },
         ],
-        image: <MainFrame height={frameSize.height} />,
+        image: <MainFrame scale={0.7} />,
     },
     {
         overview: "情報交換の新しい形",
@@ -78,7 +78,7 @@ const features = [
                 ),
             },
         ],
-        image: <ThreadFrame height={frameSize.height} />,
+        image: <ThreadFrame scale={0.7} />,
     },
     {
         overview: "交友の機会が広がる",
@@ -98,7 +98,7 @@ const features = [
                 ),
             },
         ],
-        image: <ChatFrame height={frameSize.height} />,
+        image: <ChatFrame scale={0.7} />,
     },
 ];
 
