@@ -2,19 +2,23 @@ import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import ShareCalenderIcon from "../assets/link_calendar.png";
 import ReactionIcon from "../assets/reaction.png";
 import ChatIcon from "../assets/chat.png";
+import FriendIcon from "../assets/friend.png";
 import {
+    CommentsIcon,
     CalenderIcon,
-    StreamIcon,
     TimetableIcon,
     ToDoListIcon,
-    UsersIcon,
 } from "./Icons";
 import {ChatFrame, MainFrame, ThreadFrame} from "./AppUIFrame";
-import AppStoreLogo from "../assets/app-store-badge.svg";
 
 const cardSize = {
-    width: 500,
+    width: { xs: 340, md: 450, lg: 500 },
+    // width: 500,
     height: 550,
+};
+const frameSize = {
+    width: { xs: 320, md: 300, lg: 300 },
+    height: { xs: 800, md: 550, lg: 550 },
 };
 
 const data = [
@@ -49,7 +53,7 @@ const data = [
                 ),
             }
         ],
-        image: <MainFrame height={550}/>,
+        image: <MainFrame height={frameSize.height}/>,
     },
     {
         overview: "情報交換の新しい形",
@@ -72,12 +76,12 @@ const data = [
                         component="img"
                         src={ReactionIcon}
                         alt="app store logo"
-                        sx={{ height: "5em" }}
+                        sx={{ height: "6.5em" }}
                     />
                 )
             }
         ],
-        image: <ThreadFrame height={550}/>,
+        image: <ThreadFrame height={frameSize.height}/>,
     },
     {
         overview: "交友の機会が広がる",
@@ -86,10 +90,21 @@ const data = [
                 detail:
                     "SNSへのスムーズな誘導や、時間割の共有機能で\n新しい友達やグループ活動のチャンスを増やす\n" +
                     "信頼性のバッジで安心のコミュニケーション",
-                icon: <UsersIcon />,
+                icon: <CommentsIcon />,
+            },
+            {
+                detail: "信頼関係を築いてもっと仲良くなれる！",
+                icon: (
+                    <Box
+                        component="img"
+                        src={FriendIcon}
+                        alt="app store logo"
+                        sx={{ height: "4em" }}
+                    />
+                )
             }
         ],
-        image: <ChatFrame height={550}/>,
+        image: <ChatFrame height={frameSize.height}/>,
     },
 ];
 
@@ -97,7 +112,9 @@ const FeatureCard = ({overview, content}) => {
     return (
         <Card
             variant="outlined"
-            style={{
+            // width={cardSize.width}
+            // height={cardSize.height}
+            sx={{
                 width: cardSize.width,
                 height: cardSize.height,
                 display: "flex",
@@ -111,19 +128,27 @@ const FeatureCard = ({overview, content}) => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
+                    alignItems: "center",
                     width: "100%",
                 }}
             >
                 <Typography
-                    style={{ display: 'inline-block' }}  // ここを追加！
                     variant="h4"
                     fontWeight="Bold"
-                    align="center"
-                    mb={6}
+                    position="relative"
+                    mb={8}
                 >
                     {overview}
+                    <Box
+                        position="absolute"
+                        width="120%"
+                        left="-10%"
+                        height="4px"
+                        bgcolor="#FFB84E"
+                        mx="auto"
+                        mt={1}
+                    />
                 </Typography>
-
 
 
                 <Box
@@ -159,8 +184,8 @@ const FeatureCard = ({overview, content}) => {
 const FeatureImage = ({image}) => {
     return (
         <Box
-            height={cardSize.height}
-            width={cardSize.width}
+            height={frameSize.height}
+            width={frameSize.width}
             display="flex"
             justifyContent="center"
             alignItems="center"

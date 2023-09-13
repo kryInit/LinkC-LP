@@ -16,6 +16,7 @@ import { ConceptSection } from "./components/ConceptSection";
 import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import HeroSectionImage from "./assets/HeroSectionImage.png";
 
 const MaterialUISample = () => {
     return (

@@ -1,26 +1,38 @@
 import { Box, Grid, Typography } from "@mui/material";
 import AppStoreLogo from "../assets/app-store-badge.svg";
 
-type CTABatchProps = { height?: number };
+type CTABatchProps = { height?: number | undefined };
+
+const GooglePlayBatch = ({height = 60}: CTABatchProps) => {
+    return (
+        <a href="http://play.google.com/store/dummy?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+            <img
+                alt="Google Play で手に入れよう"
+                src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
+                height={height}
+            />
+        </a>
+    );
+}
+const AppStoreBatch = ({height = 60}: CTABatchProps) => {
+    return (
+        <Box
+            component="img"
+            src={AppStoreLogo}
+            alt="app store logo"
+            sx={{ height: `${height * 0.78}px` }}
+        />
+    );
+}
+
 const CTABatch = ({ height = 60 }: CTABatchProps) => {
     return (
         <Grid container spacing={2} alignItems="center" justifyContent="center">
             <Grid item>
-                <a href="http://play.google.com/store/dummy?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
-                    <img
-                        alt="Google Play で手に入れよう"
-                        src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
-                        height={height}
-                    />
-                </a>
+                <GooglePlayBatch height={height} />
             </Grid>
             <Grid item>
-                <Box
-                    component="img"
-                    src={AppStoreLogo}
-                    alt="app store logo"
-                    sx={{ height: `${height * 0.78}px` }}
-                />
+                <AppStoreBatch height={height} />
             </Grid>
         </Grid>
     );

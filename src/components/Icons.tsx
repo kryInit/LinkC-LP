@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { faCalendar, faComments } from "@fortawesome/free-regular-svg-icons";
 import { faList, faStream, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "@mui/material";
 
@@ -63,4 +63,7 @@ export const StreamIcon = ({ height = "4em" }) => {
 };
 export const UsersIcon = ({ height = "4em" }) => {
     return <FontAwesomeIcon icon={faUsers} style={{ height: height }} />;
+};
+export const CommentsIcon = ({ height = "4em" }) => {
+    return <FontAwesomeIcon icon={faComments} style={{ height: height }} />;
 };
