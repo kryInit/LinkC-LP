@@ -18,7 +18,7 @@ jobs:
               run: yarn install
 
             - name: Build
-            - build: vite build && cp -r dist docs,
+            - run: vite build && cp -r dist docs
 
             - name: Add .nojekyll file
               run: touch dist/.nojekyll
