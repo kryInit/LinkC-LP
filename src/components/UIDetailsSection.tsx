@@ -36,74 +36,77 @@ const DetailedFrame = ({Frame, expl, top_justified = true}: DetailedFrameProps) 
 
 export const UIDetailsSection = () => {
     return (
-        <Box display="flex" flexDirection="column" alignItems="center">
+        <>
             <Typography variant="h4" fontWeight="bold" mt={3} mb={3}>
                 <span style={{ color: strongMainColor }}>Link C </span>
                 を使ってみましょう！
             </Typography>
 
-            <Box
-                sx={{
-                    display: 'flex',
-                    overflowX: 'auto',
-                    overflowY: 'hidden',
-                    whiteSpace: 'nowrap',
-                }}
-                mb={10}
-            >
-                <DetailedFrame Frame={() => <CalenderFrame scale={0.7}/>} expl={"カレンダー"} />
-                <DetailedFrame
-                    Frame={() =>
-                        <Box position="relative">
-                            <Box position="absolute" marginLeft={-20} marginTop={0}>
-                                <AddToDoFrame scale={0.7}/>
+            <Box display="flex" justifyContent="center" mb={10}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        overflowX: 'auto',
+                        overflowY: 'hidden',
+                        whiteSpace: 'nowrap',
+                    }}
+                >
+                    <DetailedFrame Frame={() => <CalenderFrame scale={0.7}/>} expl={"プロフィールを設定"} />
+                    <DetailedFrame
+                        Frame={() =>
+                            <Box position="relative">
+                                <Box position="absolute" marginLeft={-20} marginTop={0}>
+                                    <AddToDoFrame scale={0.7}/>
+                                </Box>
+                                <Box position="absolute" marginLeft={-34} marginTop={13}>
+                                    <ToDoFrame scale={0.7}/>
+                                </Box>
                             </Box>
-                            <Box position="absolute" marginLeft={-34} marginTop={13}>
-                                <ToDoFrame scale={0.7}/>
-                            </Box>
-                        </Box>
-                    }
-                    expl={"画面"}
-                />
+                        }
+                        expl={"画面"}
+                    />
 
+                </Box>
             </Box>
-            <Box
-                sx={{
-                    display: 'flex',
-                    overflowX: 'auto',
-                    overflowY: 'hidden',
-                    whiteSpace: 'nowrap',
-                }}
-            >
-                <DetailedFrame Frame={() => <ProfileFrame scale={0.7}/>} expl={"プロフィールを設定"} />
-                <DetailedFrame
-                    Frame={() =>
-                        <Box position="relative">
-                            <Box position="absolute" marginLeft={-34} marginTop={0}>
-                                <CourseFrame scale={0.7}/>
+            <Box display="flex" justifyContent="center">
+                <Box
+                    sx={{
+                        display: 'flex',
+                        overflowX: 'auto',
+                        overflowY: 'hidden',
+                        whiteSpace: 'nowrap',
+                    }}
+                >
+                    <DetailedFrame Frame={() => <ProfileFrame scale={0.7}/>} expl={"プロフィールを設定"} />
+                    <DetailedFrame
+                        Frame={() =>
+                            <Box position="relative">
+                                <Box position="absolute" marginLeft={-34} marginTop={0}>
+                                    <CourseFrame scale={0.7}/>
+                                </Box>
+                                <Box position="absolute" marginLeft={-24} marginTop={10}>
+                                    <ThreadFrame scale={0.7}/>
+                                </Box>
+                                <Box position="absolute" marginLeft={-14} marginTop={20}>
+                                    <CreateThreadFrame scale={0.7}/>
+                                </Box>
                             </Box>
-                            <Box position="absolute" marginLeft={-24} marginTop={10}>
-                                <ThreadFrame scale={0.7}/>
-                            </Box>
-                            <Box position="absolute" marginLeft={-14} marginTop={20}>
-                                <CreateThreadFrame scale={0.7}/>
-                            </Box>
-                        </Box>
-                    }
-                    expl={"画面"}
-                />
-                <DetailedFrame
-                    Frame={() =>
-                        // <Box position="relative">
-                        //     <Box marginBottom={-0}>
-                                <ChatFrame scale={0.7}/>
-                            // </Box>
-                         // </Box>
-                    }
-                    expl={"会話"}
-                    top_justified={false}
-                />
+                        }
+                        expl={"画面"}
+                    />
+                    <DetailedFrame
+                        Frame={() =>
+                            // <Box position="relative">
+                            //     <Box marginBottom={-0}>
+                                    <ChatFrame scale={0.7}/>
+                                // </Box>
+                             // </Box>
+                        }
+                        expl={"会話"}
+                        top_justified={false}
+                    />
+                </Box>
             </Box>
-        </Box>
+        </>
     );
 }
