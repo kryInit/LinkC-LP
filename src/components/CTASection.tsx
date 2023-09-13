@@ -3,7 +3,7 @@ import AppStoreLogo from "../assets/app-store-badge.svg";
 
 type CTABatchProps = { height?: number | undefined };
 
-const GooglePlayBatch = ({height = 60}: CTABatchProps) => {
+const GooglePlayBatch = ({ height = 60 }: CTABatchProps) => {
     return (
         <a href="http://play.google.com/store/dummy?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
             <img
@@ -13,8 +13,8 @@ const GooglePlayBatch = ({height = 60}: CTABatchProps) => {
             />
         </a>
     );
-}
-const AppStoreBatch = ({height = 60}: CTABatchProps) => {
+};
+const AppStoreBatch = ({ height = 60 }: CTABatchProps) => {
     return (
         <Box
             component="img"
@@ -23,7 +23,7 @@ const AppStoreBatch = ({height = 60}: CTABatchProps) => {
             sx={{ height: `${height * 0.78}px` }}
         />
     );
-}
+};
 
 const CTABatch = ({ height = 60 }: CTABatchProps) => {
     return (

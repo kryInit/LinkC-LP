@@ -15,8 +15,7 @@ import { BottomCTASection } from "./components/CTASection";
 import { ConceptSection } from "./components/ConceptSection";
 import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import HeroSectionImage from "./assets/HeroSectionImage.png";
+import { ThemeProvider, createTheme } from "@mui/material";
 
 const MaterialUISample = () => {
     return (
@@ -98,7 +97,7 @@ const UISection = () => {
 
 const theme = createTheme({
     typography: {
-        fontFamily: '"Source Han Code JP"', // あなたのフォントファミリーを設定
+        fontFamily: "monospace, Source Code Pro",
     },
 });
 
@@ -132,8 +131,8 @@ const AppRoute = () => {
                 </Box>
             </Container>
 
-            <div style={{ height: "50vh" }} />
-            <MaterialUISample />
+            {/*<div style={{ height: "50vh" }} />*/}
+            {/*<MaterialUISample />*/}
         </>
     );
 };

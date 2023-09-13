@@ -9,16 +9,15 @@ import {
     TimetableIcon,
     ToDoListIcon,
 } from "./Icons";
-import {ChatFrame, MainFrame, ThreadFrame} from "./AppUIFrame";
+import { ChatFrame, MainFrame, ThreadFrame } from "./AppUIFrame";
 
 const cardSize = {
     width: { xs: 340, md: 450, lg: 500 },
-    // width: 500,
     height: 550,
 };
 const frameSize = {
-    width: { xs: 320, md: 300, lg: 300 },
-    height: { xs: 800, md: 550, lg: 550 },
+    width: 340,
+    height: { xs: 650, md: 600, lg: 600 },
 };
 
 const data = [
@@ -51,9 +50,9 @@ const data = [
                         sx={{ height: "5em" }}
                     />
                 ),
-            }
+            },
         ],
-        image: <MainFrame height={frameSize.height}/>,
+        image: <MainFrame height={frameSize.height} />,
     },
     {
         overview: "情報交換の新しい形",
@@ -67,7 +66,7 @@ const data = [
                         alt="app store logo"
                         sx={{ height: "5em" }}
                     />
-                )
+                ),
             },
             {
                 detail: "ユーザーのいいねで\n情報の信頼性もチェック",
@@ -78,18 +77,16 @@ const data = [
                         alt="app store logo"
                         sx={{ height: "6.5em" }}
                     />
-                )
-            }
+                ),
+            },
         ],
-        image: <ThreadFrame height={frameSize.height}/>,
+        image: <ThreadFrame height={frameSize.height} />,
     },
     {
         overview: "交友の機会が広がる",
         content: [
             {
-                detail:
-                    "SNSへのスムーズな誘導や、時間割の共有機能で\n新しい友達やグループ活動のチャンスを増やす\n" +
-                    "信頼性のバッジで安心のコミュニケーション",
+                detail: "SNSへのスムーズな誘導や、時間割の共有機能で\n新しい友達やグループ活動のチャンスを増やす\n",
                 icon: <CommentsIcon />,
             },
             {
@@ -101,19 +98,17 @@ const data = [
                         alt="app store logo"
                         sx={{ height: "4em" }}
                     />
-                )
-            }
+                ),
+            },
         ],
-        image: <ChatFrame height={frameSize.height}/>,
+        image: <ChatFrame height={frameSize.height} />,
     },
 ];
 
-const FeatureCard = ({overview, content}) => {
+const FeatureCard = ({ overview, content }) => {
     return (
         <Card
             variant="outlined"
-            // width={cardSize.width}
-            // height={cardSize.height}
             sx={{
                 width: cardSize.width,
                 height: cardSize.height,
@@ -150,42 +145,39 @@ const FeatureCard = ({overview, content}) => {
                     />
                 </Typography>
 
+                <Box display="flex" flexDirection="column" gap={5}>
+                    {content.map((item) => (
+                        <Box>
+                            {item.detail.split("\n").map((content, idx) => (
+                                <Typography
+                                    key={idx}
+                                    variant="body2"
+                                    align="center"
+                                    fontSize={18}
+                                    gutterBottom
+                                >
+                                    {content}
+                                </Typography>
+                            ))}
 
-                <Box
-                    display="flex" flexDirection="column" gap={5}
-                >
-                    {
-                        content.map((item) => (
-                            <Box>
-                                {item.detail.split("\n").map((content, idx) => (
-                                    <Typography
-                                        key={idx}
-                                        variant="body2"
-                                        align="center"
-                                        fontSize={18}
-                                        gutterBottom
-                                    >
-                                        {content}
-                                    </Typography>
-                                ))}
-
-                                <Box display="flex" justifyContent="center">
-                                    {item.icon}
-                                </Box>
+                            <Box display="flex" justifyContent="center">
+                                {item.icon}
                             </Box>
-                        ))
-                    }
+                        </Box>
+                    ))}
                 </Box>
             </CardContent>
         </Card>
     );
-}
+};
 
-const FeatureImage = ({image}) => {
+const FeatureImage = ({ image }) => {
     return (
         <Box
-            height={frameSize.height}
-            width={frameSize.width}
+            sx={{
+                width: frameSize.width,
+                height: frameSize.height,
+            }}
             display="flex"
             justifyContent="center"
             alignItems="center"
@@ -193,7 +185,7 @@ const FeatureImage = ({image}) => {
             {image}
         </Box>
     );
-}
+};
 
 export const FeatureSection = () => {
     return (
@@ -208,10 +200,13 @@ export const FeatureSection = () => {
                     justifyContent="center"
                 >
                     <Grid item>
-                        <FeatureCard overview={item.overview} content={item.content}/>
+                        <FeatureCard
+                            overview={item.overview}
+                            content={item.content}
+                        />
                     </Grid>
                     <Grid item>
-                        <FeatureImage image={item.image}/>
+                        <FeatureImage image={item.image} />
                     </Grid>
                 </Grid>
             ))}

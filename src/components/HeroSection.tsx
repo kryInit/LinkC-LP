@@ -2,8 +2,6 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { Box, Typography } from "@mui/material";
 import LinkCIcon from "../assets/appimage3.png";
 
-
-
 import HeroSectionImage from "../assets/HeroSectionImage.png";
 
 import { TOPCTASection } from "./CTASection";
@@ -11,8 +9,7 @@ import { TOPCTASection } from "./CTASection";
 export const HeroSection = () => {
     // const isMobile = useMediaQuery('(max-width:600px)');
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
         <>
