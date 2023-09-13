@@ -12,9 +12,10 @@ type FrameProps = {
 type FrameHelperProps = {
     scale: number;
     FrameCore: () => undefined
+    shadow: boolean
 };
 // todo: scaling
-const FrameHelper = ({ scale, FrameCore }: FrameHelperProps) => {
+const FrameHelper = ({ scale, FrameCore, shadow }: FrameHelperProps) => {
     const transformStr = `scale(${scale})`;
     return (
         <Box position="relative" sx={{ transform: transformStr }} display="flex" justifyContent="center" alignItems="center">
@@ -24,8 +25,8 @@ const FrameHelper = ({ scale, FrameCore }: FrameHelperProps) => {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%) scale(0.990)",
-                    borderRadius:" 65px",
-                    boxShadow: '0px 50px 80px rgba(0, 0, 0, 0.3)',
+                    borderRadius: "65px",
+                    boxShadow: shadow ? '0px 50px 80px rgba(0, 0, 0, 0.3)' : '',
                 }}
                 component="img"
                 src={IPhoneFrame}
@@ -54,18 +55,18 @@ const FrameHelper = ({ scale, FrameCore }: FrameHelperProps) => {
     );
 };
 
-export const MainFrame = ({ scale = 1.0 }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={MainFrameCore} />;
+export const MainFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
+    return <FrameHelper scale={scale} FrameCore={MainFrameCore} shadow={shadow} />;
 };
 
-export const ThreadFrame = ({ scale = 1.0 }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={ThreadFrameCore} />;
+export const ThreadFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
+    return <FrameHelper scale={scale} FrameCore={ThreadFrameCore} shadow={shadow} />;
 };
 
-export const ChatFrame = ({ scale = 1.0 }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={ChatFrameCore} />;
+export const ChatFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
+    return <FrameHelper scale={scale} FrameCore={ChatFrameCore} shadow={shadow} />;
 };
 
-export const ProfileFrame = ({ scale = 1.0 }: FrameProps) => {
-    return <FrameHelper scale={scale} FrameCore={ProfileFrameCore} />;
+export const ProfileFrame = ({ scale = 1.0, shadow = true }: FrameProps) => {
+    return <FrameHelper scale={scale} FrameCore={ProfileFrameCore} shadow={shadow} />;
 }

@@ -12,6 +12,8 @@ import {
 import {ChatFrame, MainFrame, ProfileFrame, ThreadFrame} from "./AppUIFrame";
 import { mainColor, strongMainColor } from "./Utils";
 
+// todo: 流石に汚くなってきたからなんとかしたい
+
 const cardSize = {
     width: { xs: 340, md: 450, lg: 500 },
     height: 550,
@@ -81,10 +83,39 @@ const features = [
         image: (
             <Box sx={{
                 justifyContent:" center",
+                position: "relative",
                 display: "flex",
                 width: "100%",
                 height: "140%",
             }}>
+                {/*<Box*/}
+                {/*    sx={{*/}
+                {/*        position: "absolute",*/}
+                {/*        top: "50%",*/}
+                {/*        left: "50%",*/}
+                {/*        transform: "translate(-50%, -50%) scale(0.7)",*/}
+                {/*        borderRadius:" 65px",*/}
+                {/*        bgcolor: 'black'*/}
+                {/*    }}*/}
+                {/*    height={750}*/}
+                {/*    width={372}*/}
+                {/*/>*/}
+                {/*<Box*/}
+                {/*    sx={{*/}
+                {/*        position: "absolute",*/}
+                {/*        top: "50%",*/}
+                {/*        left: "50%",*/}
+                {/*        transform: "translate(-50%, -50%) scale(0.787)",*/}
+                {/*        borderRadius:" 65px",*/}
+                {/*        boxShadow: '0px 50px 80px rgba(0, 0, 0, 0.3)',*/}
+                {/*    }}*/}
+                {/*    component="img"*/}
+                {/*    src={IPhoneFrame}*/}
+                {/*    height={750}*/}
+                {/*    width={372}*/}
+                {/*/>*/}
+
+
                 <Box sx={{
                     position: "absolute",
                     // marginTop: "-9%",
@@ -93,17 +124,16 @@ const features = [
                     alignItems: "center",
                     display: "flex",
                 }}>
-                    <ThreadFrame scale={0.7}/>
+                    <ThreadFrame scale={0.7} shadow={true} />
                 </Box>
                 <Box sx={{
                     position: "absolute",
-                    // marginTop: "-9%",
                     clipPath: 'polygon(0% 100%, 0% 53%, 100% 33%, 100% 100%)',
                     justifyContent: "center",
                     alignItems: "center",
                     display: "flex",
                 }}>
-                    <ChatFrame scale={0.7}/>
+                    <ChatFrame scale={0.7} shadow={true} />
                 </Box>
             </Box>
         )

@@ -1,6 +1,9 @@
 import {Box, Grid, Typography} from "@mui/material";
 import {ChatFrame, ProfileFrame, ThreadFrame} from "./AppUIFrame";
 
+const DetailedFrame = ({children}) => {
+
+}
 export const UIDetailsSection = () => {
     return (
         <Box
@@ -20,13 +23,13 @@ export const UIDetailsSection = () => {
                           minWidth: '450px',
                           height: '450px',
                           display: 'flex',
+                          position: "relative",
                           alignItems: 'flex-start',
                           justifyContent: 'center',
                           marginTop: '-20px',
-                          position: "absolute"
                       }}
                 >
-                    <Typography variant="h4" fontWeight="bold"  mt={12}>
+                    <Typography variant="h4" fontWeight="bold" position="absolute" mt={12}>
                         プロフィールを設定
                     </Typography>
 
@@ -39,13 +42,14 @@ export const UIDetailsSection = () => {
                           minWidth: '450px',
                           height: '450px',
                           display: 'flex',
+                          position: "relative",
                           alignItems: 'flex-end',
                           justifyContent: 'center',
                           marginBottom: '-20px',
                       }}
                 >
                     <ThreadFrame scale={0.5} />
-                    <Typography variant="h4" fontWeight="bold" position="absolute"     sx={{
+                    <Typography variant="h4" fontWeight="bold" position="absolute" sx={{
                         transform: 'translate(0px, -100px)'
                     }}>
                         画面
@@ -58,6 +62,7 @@ export const UIDetailsSection = () => {
                           minWidth: '450px',
                           height: '450px',
                           display: 'flex',
+                          position: "relative",
                           alignItems: 'flex-start',
                           justifyContent: 'center',
                           marginTop: '-20px'
