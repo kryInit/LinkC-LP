@@ -7,7 +7,6 @@ import {
     UsersIcon,
 } from "./Icons";
 import HeroSectionImage from "../assets/HeroSectionImage.png";
-import React from "react";
 
 const cardSize = {
     width: 600,

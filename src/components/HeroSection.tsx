@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
 import HeroSectionImage from "../assets/HeroSectionImage.png";
-import React from "react";
 
 import { TOPCTASection } from "./CTASection";
 

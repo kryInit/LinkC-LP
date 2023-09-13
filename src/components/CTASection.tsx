@@ -1,6 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
 import AppStoreLogo from "../assets/app-store-badge.svg";
-import React from "react";
 
 type CTABatchProps = { height?: number };
 const CTABatch = ({ height = 60 }: CTABatchProps) => {
