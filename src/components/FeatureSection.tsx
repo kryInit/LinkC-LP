@@ -122,14 +122,6 @@ const FeatureCard = ({overview, content}) => {
                     mb={6}
                 >
                     {overview}
-                    {/*<Box*/}
-                    {/*    width="60%"*/}
-                    {/*    height="4px"*/}
-                    {/*    bgcolor="black"*/}
-                    {/*    mx="auto"*/}
-                    {/*    // mt={2}  // 上のマージンを設定して、テキストから少し間を開けてみて*/}
-                    {/*    mb={6}*/}
-                    {/*/>*/}
                 </Typography>
 
 
