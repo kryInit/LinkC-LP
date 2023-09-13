@@ -21,7 +21,7 @@ const frameSize = {
     height: { xs: 650, md: 600, lg: 600 },
 };
 
-const data = [
+const features = [
     {
         overview: "多面的な情報管理",
         content: [
@@ -205,7 +205,7 @@ export const FeatureSection = () => {
                 </Typography>
             </Box>
 
-            {data.map((item, index) => (
+            {features.map((item, index) => (
                 <Grid
                     container
                     key={index}

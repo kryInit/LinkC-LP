@@ -16,6 +16,8 @@ import { ConceptSection } from "./components/ConceptSection";
 import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
 import { ThemeProvider, createTheme } from "@mui/material";
+import {ChatFrame, ProfileFrame} from "./components/AppUIFrame";
+import {UIDetailsSection} from "./components/UIDetailsSection";
 
 const MaterialUISample = () => {
     return (
@@ -110,34 +112,40 @@ const AppRoute = () => {
             </Box>
 
             <Container maxWidth="xl">
-                <Box mb={3} bgcolor={backgroundColor} p={2}>
+                <Box mb={3} bgcolor={backgroundColor} p={5}>
                     <ConceptSection />
                 </Box>
 
-                <Box mb={3} bgcolor={backgroundColor} p={2}>
+                <Box mb={3} bgcolor={backgroundColor} p={5}>
                     <FeatureSection />
                 </Box>
 
-                <Box mb={3} bgcolor={backgroundColor} p={2}>
+                <Box mb={3} bgcolor={backgroundColor} p={5}>
                     <UISection />
+                    <UIDetailsSection />
                 </Box>
 
-                <Box mb={3} bgcolor={backgroundColor} p={2}>
+                <Box mb={3} bgcolor={backgroundColor} p={5}>
                     <FAQSection />
                 </Box>
 
-                <Box mb={2} bgcolor={backgroundColor} p={2}>
+                <Box mb={3} bgcolor={backgroundColor} p={5}>
                     <BottomCTASection />
                 </Box>
             </Container>
+
+            {/*<Box height="50%" overflow="hidden">*/}
+            {/*    <ChatFrame scale={1.0} />*/}
+            {/*</Box>*/}
+
+
 
             <Typography
                 align="center"
                 color="textSecondary"
                 style={{ opacity: 0.6, fontSize: "0.8rem" }}
             >
-                このサイトはクッキーと愛でできているから、分けてあげられないんだ...ごめんね！
-                🍪 2023
+                このサイトは愛とクッキーでできているから、分けてあげられないんだ... ごめんね！  🍪 2023
             </Typography>
 
             {/*<div style={{ height: "50vh" }} />*/}

@@ -27,47 +27,52 @@ const faqData = [
 export const FAQSection = () => {
     return (
         <Box
-            bgcolor={FAQBackgroundColor}
-            p={4}
-            borderRadius={2}
-            boxShadow={3}
-            sx={{ maxWidth: "800px", margin: "0 auto" }}
+            display="flex"
+            justifyContent="center"
         >
-            <Box mb={3} textAlign="center">
-                <Typography variant="h4" component="h2" fontWeight="bold">
-                    FAQ
-                </Typography>
-                <Box
-                    mt={1}
-                    width="60px"
-                    height="2px"
-                    bgcolor="#333"
-                    mx="auto"
-                />
-            </Box>
-
-            {faqData.map((faq, index) => (
-                <Box
-                    key={index}
-                    sx={{
-                        marginBottom: 4,
-                        padding: 2,
-                        border: "1px solid #ddd",
-                        borderRadius: 1,
-                    }}
-                >
-                    <Typography
-                        variant="subtitle1"
-                        fontWeight="bold"
-                        marginBottom={1}
-                    >
-                        Q: {faq.question}
+            <Box
+                bgcolor={FAQBackgroundColor}
+                p={4}
+                borderRadius={2}
+                boxShadow={3}
+                sx={{ minWidth: "260px", maxWidth: "800px", margin: "auto" }}
+            >
+                <Box mb={3} textAlign="center">
+                    <Typography variant="h4" component="h2" fontWeight="bold">
+                        FAQ
                     </Typography>
-                    <Typography variant="body1" marginBottom={2}>
-                        A: {faq.answer}
-                    </Typography>
+                    <Box
+                        mt={1}
+                        width="60px"
+                        height="2px"
+                        bgcolor="#333"
+                        mx="auto"
+                    />
                 </Box>
-            ))}
+
+                {faqData.map((faq, index) => (
+                    <Box
+                        key={index}
+                        sx={{
+                            marginBottom: 4,
+                            padding: 2,
+                            border: "1px solid #ddd",
+                            borderRadius: 1,
+                        }}
+                    >
+                        <Typography
+                            variant="subtitle1"
+                            fontWeight="bold"
+                            marginBottom={1}
+                        >
+                            Q: {faq.question}
+                        </Typography>
+                        <Typography variant="body1" marginBottom={2}>
+                            A: {faq.answer}
+                        </Typography>
+                    </Box>
+                ))}
+            </Box>
         </Box>
     );
 };
