@@ -1,6 +1,6 @@
 ## 見るだけ
 
-todo
+https://kryinit.github.io/pencil-LP-sample/
 
 ## for development
 
