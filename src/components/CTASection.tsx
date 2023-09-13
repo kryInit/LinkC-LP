@@ -1,5 +1,8 @@
 import { Box, Grid, Typography } from "@mui/material";
 import AppStoreLogo from "../assets/app-store-badge.svg";
+import { strongMainColor } from "./Utils";
+import TroubleStudentImage from "../assets/trouble_student.png";
+import FriendChatImage from "../assets/friend_chat.png";
 
 type CTABatchProps = { height?: number | undefined };
 
@@ -45,7 +48,19 @@ export const TOPCTASection = () => {
 export const BottomCTASection = () => {
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
-            <Typography variant="h4">Link Cを始めよう！</Typography>
+            <Typography variant="h4" fontWeight="bold" mb={4}>
+                <span style={{ color: strongMainColor }}>Link C</span>
+                を始めよう！
+            </Typography>
+            <Box
+                component="img"
+                src={FriendChatImage}
+                sx={{ height: 250 }}
+                mb={4}
+            />
+            <Typography variant="h5" mb={4}>
+                授業も安心、友達との楽しいキャンパスライフを！
+            </Typography>
             <CTABatch />
         </Box>
     );

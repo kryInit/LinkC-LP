@@ -131,6 +131,15 @@ const AppRoute = () => {
                 </Box>
             </Container>
 
+            <Typography
+                align="center"
+                color="textSecondary"
+                style={{ opacity: 0.6, fontSize: "0.8rem" }}
+            >
+                このサイトはクッキーと愛でできているから、分けてあげられないんだ...ごめんね！
+                🍪 2023
+            </Typography>
+
             {/*<div style={{ height: "50vh" }} />*/}
             {/*<MaterialUISample />*/}
         </>

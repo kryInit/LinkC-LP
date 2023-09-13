@@ -1,3 +1,2 @@
-
-export const mainColor = "#FFB84E"
-export const strongMainColor = "#EF8640"
+export const mainColor = "#FFB84E";
+export const strongMainColor = "#EF8640";

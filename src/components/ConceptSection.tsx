@@ -1,7 +1,6 @@
 import { Box, Typography, Grid } from "@mui/material";
 import TroubleStudentIcon from "../assets/trouble_student.png";
-import {mainColor} from "./Utils";
-
+import { mainColor } from "./Utils";
 
 export const ConceptSection = () => {
     return (
@@ -22,15 +21,16 @@ export const ConceptSection = () => {
                     bgcolor="#333"
                 />
             </Box>
-            <Grid container spacing={2}
-                  sx={{
-                      // display: "flex",
-                      // justifyContent: "center",
-                      width: "70%",
-                      alignItems: "center",
-                  }}
+            <Grid
+                container
+                spacing={2}
+                sx={{
+                    // display: "flex",
+                    // justifyContent: "center",
+                    width: "70%",
+                    alignItems: "center",
+                }}
             >
-
                 <Grid item xs={12} md={6}>
                     <Typography variant="h5" textAlign="center" mb={6}>
                         友達がいないし、作るきっかけもない
@@ -41,14 +41,18 @@ export const ConceptSection = () => {
                 </Grid>
 
                 {/* 画像1 */}
-                <Grid item xs={12} md={6} sx={{ display: "flex", justifyContent: "center" }}>
+                <Grid
+                    item
+                    xs={12}
+                    md={6}
+                    sx={{ display: "flex", justifyContent: "center" }}
+                >
                     <Box
                         component="img"
                         src={TroubleStudentIcon}
                         sx={{ height: 300 }}
                     />
                 </Grid>
-
             </Grid>
         </Box>
     );
