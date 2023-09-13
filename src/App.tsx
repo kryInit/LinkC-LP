@@ -9,6 +9,8 @@ import {
     Grid,
     Box,
 } from "@mui/material";
+import { styled } from '@mui/system';
+
 
 import { HeroSection } from "./components/HeroSection";
 import { BottomCTASection } from "./components/CTASection";
@@ -16,7 +18,7 @@ import { ConceptSection } from "./components/ConceptSection";
 import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
 import { ThemeProvider, createTheme } from "@mui/material";
-import {ChatFrame, ProfileFrame} from "./components/AppUIFrame";
+import {ChatFrame, ProfileFrame, ThreadFrame} from "./components/AppUIFrame";
 import {UIDetailsSection} from "./components/UIDetailsSection";
 
 const MaterialUISample = () => {
@@ -107,6 +109,7 @@ const backgroundColor = "#FEF7EB";
 const AppRoute = () => {
     return (
         <>
+
             <Box mb={3} p={0}>
                 <HeroSection />
             </Box>
@@ -133,6 +136,15 @@ const AppRoute = () => {
                     <BottomCTASection />
                 </Box>
             </Container>
+
+            {/*<Box sx={{                          overflow: 'hidden',*/}
+            {/*    clipPath: 'polygon(0 0, 100% 0, 100% 75%, 0 100%)'}}>*/}
+            {/*    <ThreadFrame scale={0.7} />,*/}
+            {/*</Box>*/}
+            {/*<Box sx={{            clipPath: 'polygon(0 0, 100% 0, 0 100%)', // 下部を斜めにカット*/}
+            {/*}}>*/}
+            {/*    <ThreadFrame scale={0.7}/>*/}
+            {/*</Box>*/}
 
             {/*<Box height="50%" overflow="hidden">*/}
             {/*    <ChatFrame scale={1.0} />*/}

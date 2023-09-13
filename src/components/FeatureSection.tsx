@@ -9,7 +9,7 @@ import {
     TimetableIcon,
     ToDoListIcon,
 } from "./Icons";
-import { ChatFrame, MainFrame, ThreadFrame } from "./AppUIFrame";
+import {ChatFrame, MainFrame, ProfileFrame, ThreadFrame} from "./AppUIFrame";
 import { mainColor, strongMainColor } from "./Utils";
 
 const cardSize = {
@@ -78,7 +78,35 @@ const features = [
                 ),
             },
         ],
-        image: <ThreadFrame scale={0.7} />,
+        image: (
+            <Box sx={{
+                justifyContent:" center",
+                display: "flex",
+                width: "100%",
+                height: "140%",
+            }}>
+                <Box sx={{
+                    position: "absolute",
+                    // marginTop: "-9%",
+                    clipPath: 'polygon(0% 0%, 0% 51%, 100% 31%, 100% 0%)',
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                }}>
+                    <ThreadFrame scale={0.7}/>
+                </Box>
+                <Box sx={{
+                    position: "absolute",
+                    // marginTop: "-9%",
+                    clipPath: 'polygon(0% 100%, 0% 53%, 100% 33%, 100% 100%)',
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                }}>
+                    <ChatFrame scale={0.7}/>
+                </Box>
+            </Box>
+        )
     },
     {
         overview: "交友の機会が広がる",
@@ -98,7 +126,7 @@ const features = [
                 ),
             },
         ],
-        image: <ChatFrame scale={0.7} />,
+        image: <ProfileFrame scale={0.7} />,
     },
 ];
 

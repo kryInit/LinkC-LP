@@ -1,6 +1,5 @@
 import { Box, Typography, Grid } from "@mui/material";
 import TroubleStudentIcon from "../assets/trouble_student.png";
-import { mainColor } from "./Utils";
 
 export const ConceptSection = () => {
     return (
