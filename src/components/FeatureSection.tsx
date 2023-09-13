@@ -1,4 +1,7 @@
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import ShareCalenderIcon from "../assets/link_calendar.png";
+import ReactionIcon from "../assets/reaction.png";
+import ChatIcon from "../assets/chat.png";
 import {
     CalenderIcon,
     StreamIcon,
@@ -6,47 +9,174 @@ import {
     ToDoListIcon,
     UsersIcon,
 } from "./Icons";
-import HeroSectionImage from "../assets/HeroSectionImage.png";
+import {ChatFrame, MainFrame, ThreadFrame} from "./AppUIFrame";
+import AppStoreLogo from "../assets/app-store-badge.svg";
 
 const cardSize = {
-    width: 600,
-    height: 350,
+    width: 500,
+    height: 550,
 };
 
 const data = [
     {
         overview: "多面的な情報管理",
-        detail: "時間割・カレンダー・todoの3つの形式で\n履修から試験までのすべての情報を一元管理",
-        icon: (
-            <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                    <TimetableIcon />
-                </Grid>
-                <Grid item>
-                    <CalenderIcon />
-                </Grid>
-                <Grid item style={{ marginTop: "4px" }}>
-                    <ToDoListIcon height="3.8em" />
-                </Grid>
-            </Grid>
-        ),
-        image: HeroSectionImage,
+        content: [
+            {
+                detail: "時間割・カレンダー・todoの3つの形式で\n履修から試験までのすべての情報を一元管理",
+                icon: (
+                    <Grid container spacing={2} justifyContent="center">
+                        <Grid item>
+                            <TimetableIcon />
+                        </Grid>
+                        <Grid item>
+                            <CalenderIcon />
+                        </Grid>
+                        <Grid item style={{ marginTop: "4px" }}>
+                            <ToDoListIcon height="3.8em" />
+                        </Grid>
+                    </Grid>
+                ),
+            },
+            {
+                detail: "ユーザー間でカレンダー等を共有",
+                icon: (
+                    <Box
+                        component="img"
+                        src={ShareCalenderIcon}
+                        alt="app store logo"
+                        sx={{ height: "5em" }}
+                    />
+                ),
+            }
+        ],
+        image: <MainFrame height={550}/>,
     },
     {
         overview: "情報交換の新しい形",
-        detail: "トピックごとにスレッドを分け混乱なく効率的に情報共有\nさらに、ユーザーのいいねで情報の信頼性もチェック",
-        icon: <StreamIcon />,
-        image: HeroSectionImage,
+        content: [
+            {
+                detail: "トピックごとにスレッドを分け\n混乱なく効率的に情報共有",
+                icon: (
+                    <Box
+                        component="img"
+                        src={ChatIcon}
+                        alt="app store logo"
+                        sx={{ height: "5em" }}
+                    />
+                )
+            },
+            {
+                detail: "ユーザーのいいねで\n情報の信頼性もチェック",
+                icon: (
+                    <Box
+                        component="img"
+                        src={ReactionIcon}
+                        alt="app store logo"
+                        sx={{ height: "5em" }}
+                    />
+                )
+            }
+        ],
+        image: <ThreadFrame height={550}/>,
     },
     {
         overview: "交友の機会が広がる",
-        detail:
-            "SNSへのスムーズな誘導や、時間割の共有機能で\n新しい友達やグループ活動のチャンスを増やす\n" +
-            "信頼性のバッジで安心のコミュニケーション",
-        icon: <UsersIcon />,
-        image: HeroSectionImage,
+        content: [
+            {
+                detail:
+                    "SNSへのスムーズな誘導や、時間割の共有機能で\n新しい友達やグループ活動のチャンスを増やす\n" +
+                    "信頼性のバッジで安心のコミュニケーション",
+                icon: <UsersIcon />,
+            }
+        ],
+        image: <ChatFrame height={550}/>,
     },
 ];
+
+const FeatureCard = ({overview, content}) => {
+    return (
+        <Card
+            variant="outlined"
+            style={{
+                width: cardSize.width,
+                height: cardSize.height,
+                display: "flex",
+                alignItems: "center",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                borderRadius: "15px",
+            }}
+        >
+            <CardContent
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    width: "100%",
+                }}
+            >
+                <Typography
+                    style={{ display: 'inline-block' }}  // ここを追加！
+                    variant="h4"
+                    fontWeight="Bold"
+                    align="center"
+                    mb={6}
+                >
+                    {overview}
+                    {/*<Box*/}
+                    {/*    width="60%"*/}
+                    {/*    height="4px"*/}
+                    {/*    bgcolor="black"*/}
+                    {/*    mx="auto"*/}
+                    {/*    // mt={2}  // 上のマージンを設定して、テキストから少し間を開けてみて*/}
+                    {/*    mb={6}*/}
+                    {/*/>*/}
+                </Typography>
+
+
+
+                <Box
+                    display="flex" flexDirection="column" gap={5}
+                >
+                    {
+                        content.map((item) => (
+                            <Box>
+                                {item.detail.split("\n").map((content, idx) => (
+                                    <Typography
+                                        key={idx}
+                                        variant="body2"
+                                        align="center"
+                                        fontSize={18}
+                                        gutterBottom
+                                    >
+                                        {content}
+                                    </Typography>
+                                ))}
+
+                                <Box display="flex" justifyContent="center">
+                                    {item.icon}
+                                </Box>
+                            </Box>
+                        ))
+                    }
+                </Box>
+            </CardContent>
+        </Card>
+    );
+}
+
+const FeatureImage = ({image}) => {
+    return (
+        <Box
+            height={cardSize.height}
+            width={cardSize.width}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+        >
+            {image}
+        </Box>
+    );
+}
 
 export const FeatureSection = () => {
     return (
@@ -61,70 +191,10 @@ export const FeatureSection = () => {
                     justifyContent="center"
                 >
                     <Grid item>
-                        <Card
-                            variant="outlined"
-                            style={{
-                                width: cardSize.width,
-                                height: cardSize.height,
-                                display: "flex",
-                                alignItems: "center",
-                                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                                borderRadius: "15px",
-                            }}
-                        >
-                            <CardContent
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "space-between",
-                                    height: "70%",
-                                    width: "100%",
-                                }}
-                            >
-                                <Typography
-                                    variant="h4"
-                                    fontWeight="Bold"
-                                    align="center"
-                                    gutterBottom
-                                >
-                                    {item.overview}
-                                </Typography>
-
-                                <div>
-                                    {item.detail.split("\n").map((d, idx) => (
-                                        <Typography
-                                            key={idx}
-                                            variant="body2"
-                                            align="center"
-                                            fontSize={18}
-                                            gutterBottom
-                                        >
-                                            {d}
-                                        </Typography>
-                                    ))}
-                                </div>
-
-                                <Box display="flex" justifyContent="center">
-                                    {item.icon}
-                                </Box>
-                            </CardContent>
-                        </Card>
+                        <FeatureCard overview={item.overview} content={item.content}/>
                     </Grid>
-
                     <Grid item>
-                        <Box
-                            height={cardSize.height}
-                            width={cardSize.width}
-                            display="flex"
-                            justifyContent="center"
-                            alignItems="center"
-                        >
-                            <img
-                                src={item.image}
-                                alt="画像"
-                                style={{ maxHeight: "100%", maxWidth: "100%" }}
-                            />
-                        </Box>
+                        <FeatureImage image={item.image}/>
                     </Grid>
                 </Grid>
             ))}
