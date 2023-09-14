@@ -1,12 +1,12 @@
 import IPhoneFrame from "../assets/iphone-frame.png";
-import ProfileFrameCore from "../assets/ProfileFrameCore.svg";
-import CalenderFrameCore from "../assets/CalenderFrameCore.svg";
-import ToDoFrameCore from "../assets/ToDoFrameCore.svg";
-import AddToDoFrameCore from "../assets/AddToDoFrameCore.svg";
-import CourseFrameCore from "../assets/CourseFrameCore.svg";
-import ThreadFrameCore from "../assets/ThreadFrameCore.svg";
-import CreateThreadFrameCore from "../assets/CreateThreadFrameCore.svg";
-import ChatFrameCore from "../assets/ChatFrameCore.svg";
+import ProfileFrameCore from "../assets/frames/ProfileFrameCore.svg";
+import CalenderFrameCore from "../assets/frames/CalenderFrameCore.svg";
+import ToDoFrameCore from "../assets/frames/ToDoFrameCore.svg";
+import AddToDoFrameCore from "../assets/frames/AddToDoFrameCore.svg";
+import CourseFrameCore from "../assets/frames/CourseFrameCore.svg";
+import ThreadFrameCore from "../assets/frames/ThreadFrameCore.svg";
+import CreateThreadFrameCore from "../assets/frames/CreateThreadFrameCore.svg";
+import ChatFrameCore from "../assets/frames/ChatFrameCore.svg";
 
 import { Box } from "@mui/material";
 import React from "react";
