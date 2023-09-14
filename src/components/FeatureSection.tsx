@@ -20,7 +20,7 @@ import { mainColor, strongMainColor } from "./Utils";
 // todo: 流石に汚くなってきたからなんとかしたい
 
 const cardSize = {
-    width: { xs: 340, md: 450, lg: 500 },
+    width: { xs: 345, md: 410, lg: 500 },
     height: 550,
 };
 const frameSize = {

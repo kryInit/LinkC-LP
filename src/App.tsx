@@ -1,4 +1,4 @@
-import { Typography, Container, Box } from "@mui/material";
+import {Typography, Container, Box, CssBaseline} from "@mui/material";
 
 import { HeroSection } from "./components/HeroSection";
 import { BottomCTASection } from "./components/CTASection";
@@ -12,13 +12,16 @@ import { useRef } from "react";
 
 const backgroundColor = "#FEF7EB";
 const AppRoute = () => {
+    const heroRef = useRef(null);
     const aboutRef = useRef(null);
     const servicesRef = useRef(null);
+    const faqRef = useRef(null);
 
     return (
         <>
-            <TopBar aboutRef={aboutRef} servicesRef={servicesRef} />
-            <Box mb={3} p={0}>
+            <CssBaseline />
+            <TopBar heroRef={heroRef} aboutRef={aboutRef} servicesRef={servicesRef} faqRef={faqRef} />
+            <Box ref={heroRef} mb={3} p={0}>
                 <HeroSection />
             </Box>
 
@@ -35,7 +38,7 @@ const AppRoute = () => {
                     <UIDetailsSection />
                 </Box>
 
-                <Box mb={3} bgcolor={backgroundColor} p={5}>
+                <Box ref={faqRef} mb={3} bgcolor={backgroundColor} p={5}>
                     <FAQSection />
                 </Box>
 
@@ -48,6 +51,7 @@ const AppRoute = () => {
                 align="center"
                 color="textSecondary"
                 style={{ opacity: 0.6, fontSize: "0.8rem" }}
+                mb={3}
             >
                 このサイトは愛とクッキーでできているから
                 分けてあげられないんだ... ごめんね！ 🍪 2023

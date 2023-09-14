@@ -16,7 +16,6 @@ import { Menu } from "@mui/icons-material";
 const Neko = () => {
     return (
         <>
-            <CssBaseline />
             <Box
                 component="div"
                 sx={{
@@ -81,7 +80,7 @@ const handleScroll = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
 };
 
-export const TopBar = ({ aboutRef, servicesRef }) => {
+export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
     const [rotationDegree, setRotationDegree] = useState(0);
     const [clickCount, setClickCount] = useState(0);
     const [showImage, setShowImage] = useState(false);
@@ -109,7 +108,7 @@ export const TopBar = ({ aboutRef, servicesRef }) => {
         <>
             {showImage && <Neko />}
             <ThemeProvider theme={appBarTheme}>
-                <AppBar position="static" elevation={0}>
+                <AppBar position="sticky" elevation={0}>
                     <Toolbar>
                         <IconButton
                             edge="start"
@@ -131,20 +130,23 @@ export const TopBar = ({ aboutRef, servicesRef }) => {
                         {/*    sx={{ height: "2em" }}*/}
                         {/*    mr={1}*/}
                         {/*/>*/}
-                        <Typography
-                            variant="h6"
-                            flexGrow={1}
-                            sx={{ color: appBarTheme.palette.text.primary }}
-                        >
-                            Link C
-                        </Typography>
+                        <Box flexGrow={1} sx={{ color: appBarTheme.palette.text.primary }}>
+                            <Button
+                                color="inherit"
+                                onClick={() => handleScroll(heroRef)}
+                            >
+                                <Typography variant="h6" sx={{ textTransform: 'none' }}>
+                                    Link C
+                                </Typography>
+                            </Button>
+                        </Box>
                         <Box
                             sx={{
                                 display: {
                                     xs: "none",
                                     md: "flex",
-                                    color: appBarTheme.palette.text.primary,
                                 },
+                                color: appBarTheme.palette.text.primary,
                             }}
                         >
                             <Button
@@ -158,6 +160,12 @@ export const TopBar = ({ aboutRef, servicesRef }) => {
                                 onClick={() => handleScroll(servicesRef)}
                             >
                                 Services
+                            </Button>
+                            <Button
+                                color="inherit"
+                                onClick={() => handleScroll(faqRef)}
+                            >
+                                FAQ
                             </Button>
                         </Box>
                     </Toolbar>

@@ -8,7 +8,7 @@ type CTABatchProps = { height?: number | undefined };
 
 const GooglePlayBatch = ({ height = 60 }: CTABatchProps) => {
     return (
-        <a href="https://play.google.com/store/apps">
+        <a href="https://play.google.com/store/apps/details?id=org.hempuli.baba">
             <img
                 alt="Google Play で手に入れよう"
                 src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
@@ -19,7 +19,7 @@ const GooglePlayBatch = ({ height = 60 }: CTABatchProps) => {
 };
 const AppStoreBatch = ({ height = 60 }: CTABatchProps) => {
     return (
-        <a href="https://www.apple.com/jp/app-store/">
+        <a href="https://apps.apple.com/jp/app/baba-is-you/id1517281887">
             <Box
                 component="img"
                 src={AppStoreLogo}
