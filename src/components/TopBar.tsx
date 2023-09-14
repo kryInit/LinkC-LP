@@ -77,7 +77,9 @@ const appBarTheme = createTheme({
 });
 
 const handleScroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
+    const offset = -80;
+    const topPosition = ref.current.getBoundingClientRect().top + window.pageYOffset + offset;
+    window.scrollTo({ top: topPosition, behavior: "smooth" });
 };
 
 export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
@@ -104,11 +106,12 @@ export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
         }
     }, [clickCount]);
 
+
     return (
         <>
             {showImage && <Neko />}
             <ThemeProvider theme={appBarTheme}>
-                <AppBar position="sticky" elevation={0}>
+                <AppBar position="sticky" elevation={10}>
                     <Toolbar>
                         <IconButton
                             edge="start"
