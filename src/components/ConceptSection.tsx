@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, useMediaQuery } from "@mui/material";
 import TroubleStudentIcon from "../assets/trouble_student.png";
 
 export const ConceptSection = () => {
@@ -9,7 +9,15 @@ export const ConceptSection = () => {
                     大学生の皆さん
                 </Typography>
                 <Typography variant="h4" fontWeight="bold">
-                    こんなお悩みはありませんか？
+                    {useMediaQuery("(max-width:610px)") ? (
+                        <>
+                            こんなお悩みは
+                            <br />
+                            ありませんか？
+                        </>
+                    ) : (
+                        <>こんなお悩みはありませんか？</>
+                    )}
                 </Typography>
                 <Box
                     position="absolute"
@@ -26,16 +34,41 @@ export const ConceptSection = () => {
                 sx={{
                     // display: "flex",
                     // justifyContent: "center",
-                    width: "70%",
+                    // width: "70%",
                     alignItems: "center",
                 }}
             >
                 <Grid item xs={12} md={6}>
-                    <Typography variant="h5" textAlign="center" mb={6}>
-                        友達がいないし、作るきっかけもない
+                    <Typography
+                        variant="h5"
+                        textAlign="center"
+                        mb={6}
+                        whiteSpace="nowrap"
+                    >
+                        {useMediaQuery("(max-width:610px)") ? (
+                            <>
+                                友達がいないし
+                                <br />
+                                作るきっかけもない
+                            </>
+                        ) : (
+                            <>友達がいないし、作るきっかけもない</>
+                        )}
                     </Typography>
-                    <Typography variant="h5" textAlign="center">
-                        誰にも聞けないから授業情報がわからない
+                    <Typography
+                        variant="h5"
+                        textAlign="center"
+                        whiteSpace="nowrap"
+                    >
+                        {useMediaQuery("(max-width:610px)") ? (
+                            <>
+                                誰にも聞けないから
+                                <br />
+                                授業情報がわからない
+                            </>
+                        ) : (
+                            <>誰にも聞けないから授業情報がわからない</>
+                        )}
                     </Typography>
                 </Grid>
 

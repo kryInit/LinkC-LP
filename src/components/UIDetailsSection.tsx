@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import {
     ProfileFrame,
     CalenderFrame,
@@ -11,7 +11,7 @@ import {
 } from "./AppUIFrame";
 import { jsx } from "@emotion/react";
 import JSX = jsx.JSX;
-import { LinkCFont, strongMainColor } from "./Utils";
+import { ColoredLinkC, strongMainColor } from "./Utils";
 
 type DetailedFrameProps = {
     Frame: () => JSX.Element;
@@ -63,10 +63,16 @@ export const UIDetailsSection = () => {
                 mb={3}
                 align="center"
             >
-                <span style={{ color: strongMainColor, fontFamily: LinkCFont }}>
-                    Link C{" "}
-                </span>
-                を使ってみましょう！
+                {useMediaQuery("(max-width:520px)") ? (
+                    <>
+                        <ColoredLinkC />を<br />
+                        使ってみましょう！
+                    </>
+                ) : (
+                    <>
+                        <ColoredLinkC /> を使ってみましょう！
+                    </>
+                )}
             </Typography>
 
             <Box
@@ -160,15 +166,7 @@ export const UIDetailsSection = () => {
                         expl={"チャットルームの作成"}
                     />
                     <DetailedFrame
-                        Frame={
-                            () => (
-                                // <Box position="relative">
-                                //     <Box marginBottom={-0}>
-                                <ChatFrame scale={0.7} />
-                            )
-                            // </Box>
-                            // </Box>
-                        }
+                        Frame={() => <ChatFrame scale={0.7} />}
                         expl={"会話"}
                         top_justified={false}
                     />

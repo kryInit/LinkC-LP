@@ -9,70 +9,54 @@ import {
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import AppLogo from "../assets/transparent_log.svg";
-import { LinkCFont } from "./Utils";
+import { LinkC } from "./Utils";
 
 import { Menu } from "@mui/icons-material";
 
-const Neko = () => {
+const Nya = () => {
     return (
-        <>
-            <Box
-                component="div"
-                sx={{
-                    position: "fixed",
-                    width: "100vw",
-                    height: "100vh",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    zIndex: 1000,
-                    backgroundColor: "rgba(0, 0, 0, 0.7)",
-                }}
-            >
-                <Box
+        <Box
+            component="div"
+            sx={{
+                position: "fixed",
+                width: "100vw",
+                height: "100vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 1000,
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+            }}
+        >
+            <Box>
+                <img
+                    src="https://pbs.twimg.com/media/EK8DkOTUcAIUHMG?format=jpg"
+                    alt="shikaru neko"
+                    style={{
+                        maxWidth: "90vw",
+                        maxHeight: "90vh",
+                        display: "block",
+                    }}
+                />
+                <Typography
+                    component="div"
                     sx={{
-                        position: "relative",
-                        display: "inline-block",
-                        userSelect: "none",
+                        color: "white",
+                        position: "absolute",
+                        fontSize: { xs: "0.6em", sm: "0.8em", xm: "1em" },
                     }}
                 >
-                    <img
-                        src="https://pbs.twimg.com/media/EK8DkOTUcAIUHMG?format=jpg"
-                        alt="shikaru neko"
-                        style={{
-                            maxWidth: "90vw",
-                            maxHeight: "90vh",
-                            display: "block",
-                        }}
-                    />
-                    <Typography
-                        component="div"
-                        sx={{
-                            color: "white",
-                            position: "absolute",
-                            width: "100%",
-                            bottom: "5%",
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                            textAlign: "center",
-                            fontSize: "0.5em",
-                            userSelect: "text",
-                        }}
-                    >
-                        https://twitter.com/shikaruneko/status/1202183555293401088
-                    </Typography>
-                </Box>
+                    https://twitter.com/shikaruneko/status/1202183555293401088
+                </Typography>
             </Box>
-        </>
+        </Box>
     );
 };
 
 const appBarTheme = createTheme({
     palette: {
         primary: { main: "#003356" },
-        text: {
-            primary: "#e3e1d6",
-        },
+        text: { primary: "#e3e1d6" },
     },
 });
 
@@ -83,9 +67,9 @@ const handleScroll = (ref) => {
     window.scrollTo({ top: topPosition, behavior: "smooth" });
 };
 
-export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
-    const [rotationDegree, setRotationDegree] = useState(0);
+export const TopBar = ({ aboutRef, servicesRef, faqRef }) => {
     const [clickCount, setClickCount] = useState(0);
+    const [rotationDegree, setRotationDegree] = useState(0);
     const [showImage, setShowImage] = useState(false);
     const [prevClickCleaner, setPrevClickCleaner] = useState(-1);
 
@@ -95,9 +79,7 @@ export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
     };
     useEffect(() => {
         if (clickCount === 1) {
-            if (prevClickCleaner !== -1) {
-                clearTimeout(prevClickCleaner);
-            }
+            if (prevClickCleaner !== -1) clearTimeout(prevClickCleaner);
             setPrevClickCleaner(setTimeout(() => setClickCount(0), 1000));
         }
         if (clickCount >= 4) {
@@ -107,9 +89,15 @@ export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
         }
     }, [clickCount]);
 
+    const appBarContents = [
+        { title: "About", ref: aboutRef },
+        { title: "Services", ref: servicesRef },
+        { title: "FAQ", ref: faqRef },
+    ];
+
     return (
         <>
-            {showImage && <Neko />}
+            {showImage && <Nya />}
             <ThemeProvider theme={appBarTheme}>
                 <AppBar position="sticky" elevation={10}>
                     <Toolbar>
@@ -131,54 +119,34 @@ export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
                             component="img"
                             src={AppLogo}
                             sx={{ height: "2em" }}
-                            mr={1}
+                            mr={2}
                         />
                         <Box
                             flexGrow={1}
                             sx={{ color: appBarTheme.palette.text.primary }}
                         >
-                            <Button
-                                color="inherit"
-                                onClick={() => handleScroll(heroRef)}
+                            <Typography
+                                variant="h6"
+                                sx={{ textTransform: "none" }}
                             >
-                                <Typography
-                                    variant="h6"
-                                    sx={{
-                                        textTransform: "none",
-                                        fontFamily: LinkCFont,
-                                    }}
-                                >
-                                    Link C
-                                </Typography>
-                            </Button>
+                                <LinkC />
+                            </Typography>
                         </Box>
                         <Box
                             sx={{
-                                display: {
-                                    xs: "none",
-                                    md: "flex",
-                                },
+                                display: { xs: "none", md: "flex" },
                                 color: appBarTheme.palette.text.primary,
                             }}
                         >
-                            <Button
-                                color="inherit"
-                                onClick={() => handleScroll(aboutRef)}
-                            >
-                                About
-                            </Button>
-                            <Button
-                                color="inherit"
-                                onClick={() => handleScroll(servicesRef)}
-                            >
-                                Services
-                            </Button>
-                            <Button
-                                color="inherit"
-                                onClick={() => handleScroll(faqRef)}
-                            >
-                                FAQ
-                            </Button>
+                            {appBarContents.map((content, index) => (
+                                <Button
+                                    key={index}
+                                    color="inherit"
+                                    onClick={() => handleScroll(content.ref)}
+                                >
+                                    {content.title}
+                                </Button>
+                            ))}
                         </Box>
                     </Toolbar>
                 </AppBar>

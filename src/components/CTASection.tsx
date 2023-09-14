@@ -1,8 +1,7 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import AppStoreLogo from "../assets/app-store-badge.svg";
-import { LinkCFont, strongMainColor } from "./Utils";
-import TroubleStudentImage from "../assets/trouble_student.png";
 import FriendChatImage from "../assets/friend_chat.png";
+import { ColoredLinkC } from "./Utils";
 
 type CTABatchProps = { height?: number | undefined };
 
@@ -51,10 +50,16 @@ export const BottomCTASection = () => {
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
             <Typography variant="h4" fontWeight="bold" mb={4}>
-                <span style={{ color: strongMainColor, fontFamily: LinkCFont }}>
-                    Link C
-                </span>{" "}
-                を始めよう！
+                {useMediaQuery("(max-width:435px)") ? (
+                    <>
+                        <ColoredLinkC />を<br />
+                        始めよう！
+                    </>
+                ) : (
+                    <>
+                        <ColoredLinkC /> を始めよう！
+                    </>
+                )}
             </Typography>
             <Box
                 component="img"

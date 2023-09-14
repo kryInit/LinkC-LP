@@ -21,7 +21,6 @@ const App = () => {
         <>
             <CssBaseline />
             <TopBar
-                heroRef={heroRef}
                 aboutRef={aboutRef}
                 servicesRef={servicesRef}
                 faqRef={faqRef}

@@ -1,4 +1,11 @@
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import {
+    Box,
+    Card,
+    CardContent,
+    Grid,
+    Typography,
+    useMediaQuery,
+} from "@mui/material";
 import ShareCalenderIcon from "../assets/link_calendar.png";
 import ReactionIcon from "../assets/reaction.png";
 import ChatIcon from "../assets/chat.png";
@@ -15,8 +22,7 @@ import {
     ProfileFrame,
     ThreadFrame,
 } from "./AppUIFrame";
-import { LinkCFont, mainColor, strongMainColor } from "./Utils";
-import IPhoneFrame from "../assets/iphone-frame.png";
+import { ColoredLinkC, mainColor } from "./Utils";
 import React from "react";
 
 // todo: 流石に汚くなってきたからなんとかしたい
@@ -148,7 +154,7 @@ const features = [
                 <Box
                     sx={{
                         position: "absolute",
-                        // marginTop: "-9%",
+                        marginTop: { xs: "9%", md: "0%" },
                         clipPath: "polygon(0% 0%, 0% 51%, 100% 31%, 100% 0%)",
                         justifyContent: "center",
                         alignItems: "center",
@@ -160,6 +166,7 @@ const features = [
                 <Box
                     sx={{
                         position: "absolute",
+                        marginTop: { xs: "9%", md: "0%" },
                         clipPath:
                             "polygon(0% 100%, 0% 53%, 100% 33%, 100% 100%)",
                         justifyContent: "center",
@@ -169,7 +176,12 @@ const features = [
                 >
                     <ChatFrame scale={0.7} shadow={false} />
                 </Box>
-                <Box sx={{ position: "absolute" }}>
+                <Box
+                    sx={{
+                        position: "absolute",
+                        marginTop: { xs: "9%", md: "0%" },
+                    }}
+                >
                     {/*<svg width="390" height="800" xmlns="http://www.w3.org/2000/svg">*/}
                     {/*    <rect x="20" y="427" width="380" height="13" rx="4" ry="4" transform="rotate(-23.5 20 433)" fill="#003356"/>*/}
                     {/*</svg>*/}
@@ -294,29 +306,47 @@ const FeatureImage = ({ image }) => {
 };
 
 export const FeatureSection = () => {
+    const Title = () => {
+        const is_device_0 = useMediaQuery("(max-width:420px)");
+        const is_device_1 = useMediaQuery("(max-width:560px)");
+        const is_device_2 = useMediaQuery("(max-width:745px)");
+        if (is_device_0)
+            return (
+                <>
+                    そんな孤独で
+                    <br />
+                    不安な大学生を
+                    <br />
+                    助けるのが{" "}
+                </>
+            );
+        if (is_device_1)
+            return (
+                <>
+                    そんな孤独で不安な
+                    <br />
+                    大学生を助けるのが
+                    <br />
+                </>
+            );
+        if (is_device_2)
+            return (
+                <>
+                    そんな孤独で不安な大学生を
+                    <br />
+                    助けるのが{" "}
+                </>
+            );
+        return <>そんな孤独で不安な大学生を助けるのが </>;
+    };
+
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
             <Box display="inline-block" position="relative" mb={2}>
                 <Typography variant="h4" fontWeight="bold" mt={3} mb={3}>
-                    そんな孤独で不安な大学生を助けるのが{" "}
+                    <Title />
                     <Box display="inline-block" position="relative" mb={2}>
-                        <span
-                            style={{
-                                color: strongMainColor,
-                                fontFamily: LinkCFont,
-                            }}
-                        >
-                            Link C
-                        </span>
-                        {/*<Box*/}
-                        {/*    position="absolute"*/}
-                        {/*    width="110%"*/}
-                        {/*    left="-5%"*/}
-                        {/*    height="4px"*/}
-                        {/*    bgcolor="#333"*/}
-                        {/*    mx="auto"*/}
-                        {/*    mt={1}*/}
-                        {/*/>*/}
+                        <ColoredLinkC />
                     </Box>
                 </Typography>
             </Box>

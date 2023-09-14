@@ -5,10 +5,9 @@ import LinkCIcon from "../assets/appimage3.png";
 import HeroSectionImage from "../assets/HeroSectionImage.png";
 
 import { TOPCTASection } from "./CTASection";
-import { LinkCFont } from "./Utils";
+import { LinkC } from "./Utils";
 
 export const HeroSection = () => {
-    // const isMobile = useMediaQuery('(max-width:600px)');
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -19,8 +18,6 @@ export const HeroSection = () => {
                     position: "relative",
                     height: isMobile ? 450 : 600,
                     backgroundImage: `url(${HeroSectionImage})`,
-                    // backgroundSize: "cover",
-                    // backgroundPosition: "center",
                 }}
             >
                 <Box
@@ -53,15 +50,7 @@ export const HeroSection = () => {
                         }}
                     >
                         授業情報を共有して
-                    </Typography>
-                    <Typography
-                        variant="subtitle1"
-                        align="left"
-                        sx={{
-                            color: "black",
-                            fontSize: "1.15rem",
-                        }}
-                    >
+                        <br />
                         同学年の仲間と繋がるカレンダーアプリ
                     </Typography>
                     <Typography
@@ -71,10 +60,9 @@ export const HeroSection = () => {
                             color: "black",
                             fontSize: "4rem",
                             marginBottom: "3rem",
-                            fontFamily: LinkCFont,
                         }}
                     >
-                        Link C
+                        <LinkC />
                     </Typography>
                     {!isMobile ? <TOPCTASection /> : <></>}
                 </Box>
