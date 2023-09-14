@@ -5,6 +5,7 @@ import LinkCIcon from "../assets/appimage3.png";
 import HeroSectionImage from "../assets/HeroSectionImage.png";
 
 import { TOPCTASection } from "./CTASection";
+import { LinkCFont } from "./Utils";
 
 export const HeroSection = () => {
     // const isMobile = useMediaQuery('(max-width:600px)');
@@ -70,6 +71,7 @@ export const HeroSection = () => {
                             color: "black",
                             fontSize: "4rem",
                             marginBottom: "3rem",
+                            fontFamily: LinkCFont,
                         }}
                     >
                         Link C

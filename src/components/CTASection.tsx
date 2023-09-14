@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import AppStoreLogo from "../assets/app-store-badge.svg";
-import { strongMainColor } from "./Utils";
+import { LinkCFont, strongMainColor } from "./Utils";
 import TroubleStudentImage from "../assets/trouble_student.png";
 import FriendChatImage from "../assets/friend_chat.png";
 
@@ -51,7 +51,9 @@ export const BottomCTASection = () => {
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
             <Typography variant="h4" fontWeight="bold" mb={4}>
-                <span style={{ color: strongMainColor }}>Link C</span>{" "}
+                <span style={{ color: strongMainColor, fontFamily: LinkCFont }}>
+                    Link C
+                </span>{" "}
                 を始めよう！
             </Typography>
             <Box

@@ -1,7 +1,6 @@
 import {
     Typography,
     Box,
-    CssBaseline,
     AppBar,
     Toolbar,
     IconButton,
@@ -9,7 +8,8 @@ import {
 } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useEffect, useState } from "react";
-import AppLogo from "../assets/logo.png";
+import AppLogo from "../assets/transparent_log.svg";
+import { LinkCFont } from "./Utils";
 
 import { Menu } from "@mui/icons-material";
 
@@ -78,7 +78,8 @@ const appBarTheme = createTheme({
 
 const handleScroll = (ref) => {
     const offset = -80;
-    const topPosition = ref.current.getBoundingClientRect().top + window.pageYOffset + offset;
+    const topPosition =
+        ref.current.getBoundingClientRect().top + window.pageYOffset + offset;
     window.scrollTo({ top: topPosition, behavior: "smooth" });
 };
 
@@ -106,7 +107,6 @@ export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
         }
     }, [clickCount]);
 
-
     return (
         <>
             {showImage && <Neko />}
@@ -127,18 +127,27 @@ export const TopBar = ({ heroRef, aboutRef, servicesRef, faqRef }) => {
                         >
                             <Menu />
                         </IconButton>
-                        {/*<Box*/}
-                        {/*    component="img"*/}
-                        {/*    src={AppLogo}*/}
-                        {/*    sx={{ height: "2em" }}*/}
-                        {/*    mr={1}*/}
-                        {/*/>*/}
-                        <Box flexGrow={1} sx={{ color: appBarTheme.palette.text.primary }}>
+                        <Box
+                            component="img"
+                            src={AppLogo}
+                            sx={{ height: "2em" }}
+                            mr={1}
+                        />
+                        <Box
+                            flexGrow={1}
+                            sx={{ color: appBarTheme.palette.text.primary }}
+                        >
                             <Button
                                 color="inherit"
                                 onClick={() => handleScroll(heroRef)}
                             >
-                                <Typography variant="h6" sx={{ textTransform: 'none' }}>
+                                <Typography
+                                    variant="h6"
+                                    sx={{
+                                        textTransform: "none",
+                                        fontFamily: LinkCFont,
+                                    }}
+                                >
                                     Link C
                                 </Typography>
                             </Button>

@@ -11,7 +11,7 @@ import {
 } from "./AppUIFrame";
 import { jsx } from "@emotion/react";
 import JSX = jsx.JSX;
-import { strongMainColor } from "./Utils";
+import { LinkCFont, strongMainColor } from "./Utils";
 
 type DetailedFrameProps = {
     Frame: () => JSX.Element;
@@ -63,7 +63,9 @@ export const UIDetailsSection = () => {
                 mb={3}
                 align="center"
             >
-                <span style={{ color: strongMainColor }}>Link C </span>
+                <span style={{ color: strongMainColor, fontFamily: LinkCFont }}>
+                    Link C{" "}
+                </span>
                 を使ってみましょう！
             </Typography>
 

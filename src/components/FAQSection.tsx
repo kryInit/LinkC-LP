@@ -32,7 +32,7 @@ export const FAQSection = () => {
                 p={4}
                 borderRadius={2}
                 boxShadow={3}
-                sx={{ minWidth: "260px", maxWidth: "800px", margin: "auto" }}
+                sx={{ minWidth: "320px", maxWidth: "800px", margin: "auto" }}
             >
                 <Box mb={3} textAlign="center">
                     <Typography variant="h4" component="h2" fontWeight="bold">

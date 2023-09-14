@@ -15,7 +15,9 @@ import {
     ProfileFrame,
     ThreadFrame,
 } from "./AppUIFrame";
-import { mainColor, strongMainColor } from "./Utils";
+import { LinkCFont, mainColor, strongMainColor } from "./Utils";
+import IPhoneFrame from "../assets/iphone-frame.png";
+import React from "react";
 
 // todo: 流石に汚くなってきたからなんとかしたい
 
@@ -121,6 +123,27 @@ const features = [
                 {/*    height={750}*/}
                 {/*    width={372}*/}
                 {/*/>*/}
+                <Box
+                    position="relative"
+                    sx={{ transform: `scale(0.7)` }}
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                >
+                    <Box
+                        sx={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%) scale(0.990)",
+                            borderRadius: "65px",
+                            boxShadow: "0px 50px 80px rgba(0, 0, 0, 0.3)",
+                        }}
+                        component="img"
+                        height={844}
+                        width={416}
+                    />
+                </Box>
 
                 <Box
                     sx={{
@@ -132,7 +155,7 @@ const features = [
                         display: "flex",
                     }}
                 >
-                    <ThreadFrame scale={0.7} shadow={true} />
+                    <ThreadFrame scale={0.7} shadow={false} />
                 </Box>
                 <Box
                     sx={{
@@ -144,7 +167,24 @@ const features = [
                         display: "flex",
                     }}
                 >
-                    <ChatFrame scale={0.7} shadow={true} />
+                    <ChatFrame scale={0.7} shadow={false} />
+                </Box>
+                <Box sx={{ position: "absolute" }}>
+                    {/*<svg width="390" height="800" xmlns="http://www.w3.org/2000/svg">*/}
+                    {/*    <rect x="20" y="427" width="380" height="13" rx="4" ry="4" transform="rotate(-23.5 20 433)" fill="#003356"/>*/}
+                    {/*</svg>*/}
+                    <svg
+                        width="390"
+                        height="800"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M34 427 L356 287"
+                            stroke="#003356"
+                            strokeWidth="5"
+                            strokeLinecap="round"
+                        />
+                    </svg>
                 </Box>
             </Box>
         ),
@@ -260,7 +300,14 @@ export const FeatureSection = () => {
                 <Typography variant="h4" fontWeight="bold" mt={3} mb={3}>
                     そんな孤独で不安な大学生を助けるのが{" "}
                     <Box display="inline-block" position="relative" mb={2}>
-                        <span style={{ color: strongMainColor }}>Link C</span>
+                        <span
+                            style={{
+                                color: strongMainColor,
+                                fontFamily: LinkCFont,
+                            }}
+                        >
+                            Link C
+                        </span>
                         {/*<Box*/}
                         {/*    position="absolute"*/}
                         {/*    width="110%"*/}
