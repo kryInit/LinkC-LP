@@ -16,7 +16,7 @@ export const HeroSection = () => {
             <Box
                 sx={{
                     position: "relative",
-                    height: isMobile ? 500 : 600,
+                    height: isMobile ? 450 : 600,
                     backgroundImage: `url(${HeroSectionImage})`,
                     // backgroundSize: "cover",
                     // backgroundPosition: "center",
@@ -25,10 +25,11 @@ export const HeroSection = () => {
                 <Box
                     sx={{
                         position: "absolute",
-                        top: "1%",
-                        left: "9%",
+                        top: isMobile ? "8%" : "1%",
+                        left: isMobile ? "50%" : "9%",
+                        transform: isMobile ? "translateX(-50%)" : "none",
                         color: "white",
-                        height: { xs: 200, md: 300, lg: 350 },
+                        height: { xs: 200, sm: 300, md: 300, lg: 330 },
                     }}
                     component="img"
                     src={LinkCIcon}
@@ -37,8 +38,8 @@ export const HeroSection = () => {
                 <Box
                     sx={{
                         position: "absolute",
-                        top: "60%",
-                        left: { xs: "5%", md: "20%" },
+                        top: { xs: "60%", sm: "55%" },
+                        left: { xs: "5%", sm: "20%", md: "20%" },
                         color: "white",
                     }}
                 >
@@ -47,10 +48,20 @@ export const HeroSection = () => {
                         align="left"
                         sx={{
                             color: "black",
-                            fontSize: "1.5rem",
+                            fontSize: "1.15rem",
                         }}
                     >
-                        繋がりを生む時間割アプリ
+                        授業情報を共有して
+                    </Typography>
+                    <Typography
+                        variant="subtitle1"
+                        align="left"
+                        sx={{
+                            color: "black",
+                            fontSize: "1.15rem",
+                        }}
+                    >
+                        同学年の仲間と繋がるカレンダーアプリ
                     </Typography>
                     <Typography
                         variant="h3"

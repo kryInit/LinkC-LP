@@ -1,15 +1,4 @@
-import {
-    AppBar,
-    Toolbar,
-    Typography,
-    Card,
-    CardContent,
-    Container,
-    Button,
-    Grid,
-    Box,
-    IconButton,
-} from "@mui/material";
+import { Typography, Container, Box } from "@mui/material";
 
 import { HeroSection } from "./components/HeroSection";
 import { BottomCTASection } from "./components/CTASection";
@@ -18,110 +7,23 @@ import { FeatureSection } from "./components/FeatureSection";
 import { FAQSection } from "./components/FAQSection";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { UIDetailsSection } from "./components/UIDetailsSection";
-import { mainColor, strongMainColor } from "./components/Utils";
-
-const MaterialUISample = () => {
-    return (
-        <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography variant="h6">My Cool Product</Typography>
-                </Toolbar>
-            </AppBar>
-            <Container>
-                <Box my={4}>
-                    <Typography variant="h3" gutterBottom>
-                        Welcome to My Product!
-                    </Typography>
-                    <Typography variant="subtitle1">
-                        We offer the best features for you. Explore below!
-                    </Typography>
-                </Box>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} md={4}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant="h5">Feature 1</Typography>
-                                <Typography>
-                                    Description for feature 1.
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant="h5">Feature 2</Typography>
-                                <Typography>
-                                    Description for feature 2.
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant="h5">Feature 3</Typography>
-                                <Typography>
-                                    Description for feature 3.
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                </Grid>
-                <Box mt={4}>
-                    <Button variant="contained" color="primary">
-                        Learn More
-                    </Button>
-                </Box>
-            </Container>
-        </div>
-    );
-};
-
-const theme = createTheme({
-    typography: {
-        fontFamily: "monospace, Source Code Pro",
-    },
-});
-import React from "react";
-import { Menu } from "@mui/icons-material";
-
-const appBarTheme = createTheme({
-    palette: {
-        primary: { main: "#333" },
-        secondary: { main: "#ff5722" },
-    },
-});
+import { TopBar } from "./components/TopBar";
+import { useRef } from "react";
 
 const backgroundColor = "#FEF7EB";
 const AppRoute = () => {
+    const aboutRef = useRef(null);
+    const servicesRef = useRef(null);
+
     return (
         <>
-            {/*<ThemeProvider theme={appBarTheme}>*/}
-            {/*    <AppBar position="static" elevation={0}>*/}
-            {/*        <Toolbar>*/}
-            {/*            /!*<IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>*!/*/}
-            {/*                /!*<Menu />*!/*/}
-            {/*            /!*</IconButton>*!/*/}
-            {/*            <Typography variant="h6" flexGrow={1}>*/}
-            {/*                Link C*/}
-            {/*            </Typography>*/}
-            {/*            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>*/}
-            {/*                <Button color="inherit">About</Button>*/}
-            {/*                <Button color="inherit">Services</Button>*/}
-            {/*                <Button color="inherit">Contact</Button>*/}
-            {/*            </Box>*/}
-            {/*        </Toolbar>*/}
-            {/*    </AppBar>*/}
-            {/*</ThemeProvider>*/}
-
+            <TopBar aboutRef={aboutRef} servicesRef={servicesRef} />
             <Box mb={3} p={0}>
                 <HeroSection />
             </Box>
 
             <Container maxWidth="xl">
-                <Box mb={3} bgcolor={backgroundColor} p={5}>
+                <Box ref={aboutRef} mb={3} bgcolor={backgroundColor} p={5}>
                     <ConceptSection />
                 </Box>
 
@@ -129,7 +31,7 @@ const AppRoute = () => {
                     <FeatureSection />
                 </Box>
 
-                <Box mb={3} bgcolor={backgroundColor} p={2}>
+                <Box ref={servicesRef} mb={3} bgcolor={backgroundColor} p={2}>
                     <UIDetailsSection />
                 </Box>
 
@@ -147,8 +49,8 @@ const AppRoute = () => {
                 color="textSecondary"
                 style={{ opacity: 0.6, fontSize: "0.8rem" }}
             >
-                このサイトは愛とクッキーでできているから、分けてあげられないんだ...
-                ごめんね！ 🍪 2023
+                このサイトは愛とクッキーでできているから
+                分けてあげられないんだ... ごめんね！ 🍪 2023
             </Typography>
 
             {/*<div style={{ height: "50vh" }} />*/}
@@ -156,6 +58,12 @@ const AppRoute = () => {
         </>
     );
 };
+
+const theme = createTheme({
+    typography: {
+        // fontFamily: "monospace",
+    },
+});
 
 const App = () => {
     return (

@@ -37,7 +37,7 @@ const DetailedFrame = ({
             }}
         >
             <Typography
-                variant="h4"
+                variant="h5"
                 fontWeight="bold"
                 position="absolute"
                 mt={7}
@@ -67,9 +67,11 @@ export const UIDetailsSection = () => {
                 を使ってみましょう！
             </Typography>
 
-            <Box display="flex" justifyContent="center"
-                 sx={{ borderBottom: `3px solid ${strongMainColor}` }}
-                 mb={10}
+            <Box
+                display="flex"
+                justifyContent="center"
+                sx={{ borderBottom: `2px solid ${strongMainColor}` }}
+                mb={10}
             >
                 <Box
                     sx={{
@@ -106,12 +108,14 @@ export const UIDetailsSection = () => {
                     />
                 </Box>
             </Box>
-            <Box display="flex" justifyContent="center"
-                 sx={{
-                     borderTop: `3px solid ${strongMainColor}`,
-                     borderBottom: `3px solid ${strongMainColor}`
-                 }}
-                 mb={3}
+            <Box
+                display="flex"
+                justifyContent="center"
+                sx={{
+                    borderTop: `2px solid ${strongMainColor}`,
+                    borderBottom: `2px solid ${strongMainColor}`,
+                }}
+                mb={3}
             >
                 <Box
                     sx={{
@@ -120,7 +124,6 @@ export const UIDetailsSection = () => {
                         overflowY: "hidden",
                         whiteSpace: "nowrap",
                     }}
-
                 >
                     <DetailedFrame
                         Frame={() => <ProfileFrame scale={0.7} />}

@@ -8,7 +8,7 @@ type CTABatchProps = { height?: number | undefined };
 
 const GooglePlayBatch = ({ height = 60 }: CTABatchProps) => {
     return (
-        <a href="http://play.google.com/store/dummy?pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+        <a href="https://play.google.com/store/apps">
             <img
                 alt="Google Play で手に入れよう"
                 src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
@@ -19,12 +19,14 @@ const GooglePlayBatch = ({ height = 60 }: CTABatchProps) => {
 };
 const AppStoreBatch = ({ height = 60 }: CTABatchProps) => {
     return (
-        <Box
-            component="img"
-            src={AppStoreLogo}
-            alt="app store logo"
-            sx={{ height: `${height * 0.78}px` }}
-        />
+        <a href="https://www.apple.com/jp/app-store/">
+            <Box
+                component="img"
+                src={AppStoreLogo}
+                alt="app store logo"
+                sx={{ height: `${height * 0.78}px` }}
+            />
+        </a>
     );
 };
 
@@ -49,8 +51,8 @@ export const BottomCTASection = () => {
     return (
         <Box display="flex" flexDirection="column" alignItems="center">
             <Typography variant="h4" fontWeight="bold" mb={4}>
-                <span style={{ color: strongMainColor }}>Link C</span>
-                {" "}を始めよう！
+                <span style={{ color: strongMainColor }}>Link C</span>{" "}
+                を始めよう！
             </Typography>
             <Box
                 component="img"
