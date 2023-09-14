@@ -212,8 +212,8 @@ const FeatureCard = ({ overview, content }) => {
                 </Typography>
 
                 <Box display="flex" flexDirection="column" gap={5}>
-                    {content.map((item) => (
-                        <Box>
+                    {content.map((item, index) => (
+                        <Box key={index}>
                             {item.detail.split("\n").map((content, idx) => (
                                 <Typography
                                     key={idx}
