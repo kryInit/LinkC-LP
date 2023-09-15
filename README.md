@@ -1,6 +1,6 @@
 ## 見るだけ
 
-https://kryinit.github.io/pencil-LP-sample/
+https://kryinit.github.io/LinkC-LP/
 
 ## for development
 
