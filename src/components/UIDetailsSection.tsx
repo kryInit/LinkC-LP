@@ -163,11 +163,11 @@ export const UIDetailsSection = () => {
                                 </Box>
                             </Box>
                         )}
-                        expl={"チャットルームの作成"}
+                        expl={"チャットルームの作成して"}
                     />
                     <DetailedFrame
                         Frame={() => <ChatFrame scale={0.7} />}
-                        expl={"会話"}
+                        expl={"情報を共有しよう！"}
                         top_justified={false}
                     />
                 </Box>
